@@ -1,0 +1,11 @@
+# Admin page - keep local only for content maintenance
+admin/
+
+# OS files
+.DS_Store
+*.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+
