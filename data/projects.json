@@ -1,0 +1,472 @@
+{
+  "profile": {
+    "name": "Nisha Rastogi",
+    "initials": "NR",
+    "profileImage": "assets/nisha-rastogi-profile-cropped.jpg",
+    "title": "Product Designer | AI & Platform UX | Designing Scalable, Human-Centered Systems",
+    "company": "Salesforce",
+    "previousCompanies": [
+      "Wish",
+      "Hero MotoCorp India"
+    ],
+    "email": "nrnisha.1997@gmail.com",
+    "resume": "https://drive.google.com/file/d/1KHkzAbgnGdrXc4ZmJ6ccnRHTr3GQbf_i/view?usp=sharing",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/nisha-rastogi/",
+      "substack": "https://substack.com/@rustog?"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Nisha Rastogi",
+      "subtitle": "Designer by day. CrossFitter by evening. Travel planner by night.\nWeekends spent vibe coding at SF hackathons with my partner.\nEvery second counts :)",
+      "images": [
+        "assets/profile image 2.jpg",
+        "assets/profile image 5.JPG",
+        "assets/profile image 1.jpg",
+        "assets/profile image 3.JPG",
+        "assets/profile image 4.JPG"
+      ],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/nisha-rastogi/",
+        "substack": "https://substack.com/@rustog?",
+        "email": "nrnisha.1997@gmail.com"
+      }
+    },
+    "about": {
+      "tagline": "Designing by day, CrossFit by night, always chasing the next destination",
+      "description1": "I'm a product designer working at the intersection of AI, systems, and human behavior. I currently design platform tools at Salesforce, where I focus on making complex technology feel clear, usable, and grounded in real user needs.",
+      "description2": "Outside of work, you'll usually find me traveling or deep into a CrossFit routine. Travel and meeting people across cultures has strengthened my empathy and curiosity, while CrossFit has taught me discipline, consistency, and respect for progress over perfection. Both show up in my work. I design with intention, resilience, and a bias toward action."
+    },
+    "travelStories": {
+      "description": "Inspired by soot.com, I built this travel stories canvas, zoom in to take a peek!"
+    },
+    "values": [
+      {
+        "title": "Structure in chaos",
+        "description": "Staying calm and collected under pressure and maintaining a steady demeanor helps me focus on finding solutions rather than getting caught up in the stress. "
+      },
+      {
+        "title": "Storytelling",
+        "description": "In my work, I use storytelling to bring ideas to life, communicate complex concepts in relatable ways, and build tangible connections with audiences."
+      },
+      {
+        "title": "Growth mindset",
+        "description": "Every opportunity is an opportunity for me to learn, improve, and adapt. Challenges don’t intimidate me—they motivate me!"
+      },
+      {
+        "title": "Strong stakeholder relationship",
+        "description": "A great UI is a reflection of the strong collaboration between designers, engineers and product managers."
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Shalini Johar",
+        "company": "Director of Design @ Salesforce",
+        "recommendation": "Over the past few years, Nisha has led the design for several key initiatives, including Agent Builder, Agentforce Data Library, and most recently, Agent Asset Library. She consistently takes the time to deeply understand the products she designs, from both a business and technical perspective.",
+        "image": "assets/Shalini Johar dp.jpeg"
+      },
+      {
+        "name": "Scott Pitkin",
+        "company": "Director of Design @Salesforce",
+        "recommendation": "Nisha is an outstanding product designer who creates strong relationships, juggles multiple complex projects, and delivers with excellence. She has wonderful energy and enthusiasm for design which uplifts and inspires. I was impressed by her strong sense of ownership for the product area, her collaboration across teams, and ability to establish and champion the UX process on a variety of project types.",
+        "image": "assets/scott pitkin.jpeg"
+      },
+      {
+        "name": "Sybil Shim",
+        "company": "Principal Engineer @ Salesforce",
+        "recommendation": "Nisha has been a driving force in shaping the user experience for ADL since the very beginning. Her ability to deeply understand user needs and translate them into intuitive, thoughtful designs has had a lasting impact on the product. From early concepts to detailed workflows, she’s consistently set a high bar for usability and clarity. ",
+        "image": "assets/Sybil.jpeg"
+      },
+      {
+        "name": "David Tsai",
+        "company": "Principal Designer @ Salesforce",
+        "recommendation": "I had the honor of being Nisha's manager when she was a Futureforce intern at Salesforce. Nisha consistently found opportunities for self-improvement, by being openminded to other people's ideas and asking for feedback from others. Whether it was design, research, business, communication, presentation, or leadership skills, she wanted to obtain that knowledge. ",
+        "image": "assets/David Tsai.jpeg"
+      },
+      {
+        "name": "Yiran Ma",
+        "company": "Senior Product Designer @ Wish",
+        "recommendation": "Within a few months on that project, she quickly became a domain expert that the rest of the team would turn to for contexts and insights. She’s extremely self-driven, always seeking feedback and new challenges. She’s also a delight to work with, or simply to be around — Her positivity always makes my day. I would not hesitate to work with her again!",
+        "image": "assets/Yiran Ma.Jpeg"
+      },
+      {
+        "name": "Tanner McGrath",
+        "company": "VP of Product @ Salesforce",
+        "recommendation": "Nisha has been critical in setting the product vision for ADL and shaping our partnership with Data Cloud. She’s had a major impact helping set direction context engineering and other new strategic initiatives we need to drive. Her ability to bring clarity to both product and design decisions has accelerated our progress in high-ambiguity areas.",
+        "image": "assets/Tanner McGrath.jpeg"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "project-one",
+      "title": "Agent Builder Platform",
+      "company": "Salesforce",
+      "date": "October 2024",
+      "year": "2023 — 2024",
+      "category": "Product Design",
+      "sector": "B2B Saas",
+      "filterTag": "b2b-saas",
+      "description": "no-code platform that enables businesses to create and deploy AI agents without any technical expertise.",
+      "previewColors": [
+        "#f0f4f8",
+        "#e8f0e8"
+      ],
+      "previewLabels": [
+        "Feature A",
+        "Feature B"
+      ],
+      "heroVideo": "assets/agent creator.mp4",
+      "details": {
+        "tagline": "Build your AI agent and deploy in minutes",
+        "overview": "My role focused on shaping the end-to-end agent creation experience for the MVP, from defining the scope and user journeys to designing interaction patterns that could scale as new agent types were introduced to the Agentforce platform. ",
+        "challenge": "AI agents unlock significant value for enterprises and creating them typically requires deep technical knowledge, long setup times, and close collaboration with engineering teams. This creates friction for business users who want to experiment, iterate, and deploy agents quickly. ",
+        "problem": "I partnered with our Research & Insights team at Salesforce to interview our top 20 customers at Salesforce to understand their pain points while building an AI agent. \n\nOur research revealed 3 core challenges: \n1. High cognitive load: Users struggled to understand what an 'agent' was and how to configure one. \n2. Unclear starting points: Too many tools and open-ended prompts. \n3. Low confidence in outcomes: Users were unsure whether their agent would behave as expected once deployed.",
+        "goals": "1. Create an AI agent without writing code\n2. Understand what the agent will do before deployment\n3. Feel confident iterating or updating the agent later",
+        "successMetrics": "Reduce time to first value:\n1. Time to first agent created: ≤ 10 minutes\n2. Time to first successful deployment: ≤ 20 minutes\n\nSuccessful agent creation:\n1. Agent creation times: 70-85% for first-time users\n2. Setup Abandonment rate: <30%\n\nValidate MVP use cases match real demand.\n1. Sales Agent: 40–50%\n2. Customer Support Agent: 30–40%\n3. Sales Coach: 15–25%",
+        "solution": "We landed on a hybrid approach: a guided flow with smart defaults that adapts based on the user's experience level. The key insight was providing progressive disclosure—showing complexity only when needed.",
+        "customSections": [
+          {
+            "title": "Structuring the creation flow",
+            "content": "Step-by-step creation flow that introduces the agent purpose upfront, progressively disclosed complexity and uses plain language instead of AI jargon.",
+            "video": "",
+            "image": ""
+          },
+          {
+            "title": "Reducing the cognitive load",
+            "content": "Limited configuration in the early steps. Used templates and pre-filled defaults per use case. Clearly separated 'required' vs 'advanced' settings.",
+            "video": "",
+            "image": ""
+          }
+        ],
+        "images": [
+          {
+            "src": "assets/Agent creator_step 1.png",
+            "caption": "Step 1: Choose your agent type"
+          },
+          {
+            "src": "assets/Agent creator_step 2.png",
+            "caption": "Step 2: Configure settings"
+          },
+          {
+            "src": "assets/Agent creator_step 3.png",
+            "caption": "Step 3: Add capabilities"
+          },
+          {
+            "src": "assets/Agent creator_step 4.png",
+            "caption": "Step 4: Review and deploy"
+          }
+        ],
+        "team": {
+          "product": [
+            "Aron Kale",
+            "Neil Armstrong",
+            "Harish Batlapenumarthy"
+          ],
+          "design": [
+            "Nisha Rastogi",
+            "Ren Long"
+          ],
+          "research": [
+            "Nicholas Feining",
+            "Michelle Tabart"
+          ],
+          "engineering": [
+            "Roshan Davis",
+            "Catherine Shing",
+            "Monil Sanghvi",
+            "Chang Lu",
+            "Rui Ying"
+          ],
+          "content": [
+            "Melissa Curtis",
+            "Lori Sanders"
+          ]
+        },
+        "overviewHeader": "Overview",
+        "challengeHeader": "Challenge",
+        "problemHeader": "User Problem",
+        "goalsHeader": "User Goals",
+        "successMetricsHeader": "Success Metrics",
+        "solutionHeader": "Design decisions",
+        "problemImage": ""
+      },
+      "heroImage": "",
+      "coverVideo": "",
+      "coverImage": "assets/agent creator cover.png",
+      "externalUrl": "",
+      "releaseNotes": "https://www.salesforce.com/agentforce/agent-builder/"
+    },
+    {
+      "id": "project-two",
+      "title": "Data Library",
+      "company": "Salesforce",
+      "date": "October 2025",
+      "year": "2023 — 2025",
+      "category": "Product Design",
+      "sector": "B2B SaaS",
+      "filterTag": "b2b-saas",
+      "description": "an end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
+      "previewColors": [
+        "#fdf4e8",
+        "#f4e8f0"
+      ],
+      "previewLabels": [
+        "Workflow",
+        "System"
+      ],
+      "details": {
+        "tagline": "Helping admins organize and manage data for AI-powered experiences.",
+        "challenge": "As more customers started experimenting with GenAI, one big theme kept surfacing: managing data was confusing and time‑consuming. Admins needed a simple and dependable way to organize content, configure response behaviors, and ensure the output from agents was grounded in the right data.",
+        "problem": "When an agent is trained on irrelevant or outdated content, it produces unreliable answers. Too much data leads to slow responses. Poorly processed data results in hallucinations. A structured pipeline—similar to washing, sorting, and storing clothes—becomes essential to keep things efficient.\n\nIn RAG, the steps mirror this process:",
+        "goals": "1. Organize and control their data sources\n2. Ensure responses were accurate and grounded\n3. Understand what was happening behind the scenes",
+        "successMetrics": "Working with PMs and engineering, we established two foundational strategies:\na. One library with multiple data sources → one retriever → lower compute costs\nb. Query once instead of multiple times",
+        "solution": "",
+        "solutionItems": [
+          {
+            "title": "Progressive disclosure",
+            "description": "Stencil loading and hover tooltips to reveal information gradually",
+            "video": "assets/data lib 1.mp4"
+          },
+          {
+            "title": "Status clarity",
+            "description": "Pipeline-based progress indicators to show what's happening",
+            "video": "assets/data lip 2.mp4"
+          },
+          {
+            "title": "Clear response settings",
+            "description": "\"Enhance data\" and \"citations\" written in non-technical language",
+            "video": "assets/data lib 3.mp4"
+          }
+        ],
+        "images": [
+          {
+            "src": "",
+            "caption": "Final designs",
+            "large": true
+          }
+        ],
+        "team": {
+          "product": [
+            "Sameer Abhinkar"
+          ],
+          "design": [
+            "Nisha Rastogi"
+          ],
+          "engineering": [
+            "Lily Xiao",
+            "Monil Sanghvi",
+            "Chang Lu",
+            "Sybil Shim and many more talented engineers"
+          ],
+          "research": [
+            "Nicholas Feining",
+            "Jinju Thomas",
+            "Tom Fuller"
+          ],
+          "content": [
+            "Melissa Curtis",
+            "Lori Sanders"
+          ]
+        },
+        "overview": "Building AI agents is only as good as the data they rely on. During my time on the Agentforce platform team at Salesforce, I led the end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
+        "problemImage": "assets/laundry day example.png",
+        "overviewHeader": "Overview",
+        "challengeHeader": "Challenge",
+        "problemHeader": "Why data management matters?",
+        "goalsHeader": "User Goals",
+        "successMetricsHeader": "Product Strategy",
+        "solutionHeader": "Key UX moments"
+      },
+      "heroImage": "assets/data library cover.png",
+      "heroVideo": "",
+      "coverVideo": "",
+      "coverImage": "assets/data lib cover.png",
+      "externalUrl": "",
+      "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
+    },
+    {
+      "id": "project-three",
+      "title": "Wish Fashion",
+      "company": "Wish",
+      "date": "August 2022",
+      "year": "2021 — 2022",
+      "category": "Product Design",
+      "sector": "B2C Ecommerce",
+      "filterTag": "b2c-ecommerce",
+      "description": "Created an intuitive, engaging, and conversion‑friendly shopping experience tailored for fashion‑forward bargain shoppers.",
+      "previewColors": [
+        "#e8f4f0",
+        "#f0e8f4"
+      ],
+      "previewLabels": [
+        "Components",
+        "Patterns"
+      ],
+      "details": {
+        "tagline": "Creating an engaging shopping experience for fashion-forward bargain shoppers.",
+        "challenge": "Describe the challenge for Wish Fashion project.",
+        "problem": "What user problems did you discover?",
+        "goals": "",
+        "successMetrics": "",
+        "solution": "Present the final design approach.",
+        "images": [
+          {
+            "src": "",
+            "caption": "Final designs",
+            "large": true
+          }
+        ],
+        "team": {
+          "design": [
+            "Nisha Rastogi"
+          ],
+          "engineering": [
+            "Engineering Team"
+          ],
+          "product": [],
+          "research": [],
+          "content": []
+        },
+        "overview": "",
+        "overviewHeader": "Overview",
+        "challengeHeader": "Challenge",
+        "problemHeader": "Problem",
+        "goalsHeader": "Goals",
+        "successMetricsHeader": "Success Metrics",
+        "solutionHeader": "Final Designs",
+        "problemImage": ""
+      },
+      "heroImage": "",
+      "heroVideo": "",
+      "coverVideo": "",
+      "coverImage": "assets/wish fashion cover.png",
+      "externalUrl": "https://www.figma.com/slides/ewjjt9jW7oO1io75vn0se9/Wish-portfolio-project?node-id=1-111046&t=UziploLkSCm7rS07-1",
+      "releaseNotes": ""
+    },
+    {
+      "id": "project-four",
+      "title": "Roast your design",
+      "company": "Personal Project",
+      "date": "August 2025",
+      "year": "2025",
+      "category": "Side Project",
+      "sector": "Independent",
+      "filterTag": "vibe-code",
+      "description": "Take a break from the mundane design work using 'Roast your design', a webapp built for fun and experimentation",
+      "previewColors": [
+        "#f4f0e8",
+        "#e8f0f4"
+      ],
+      "previewLabels": [
+        "Exploration",
+        "Concept"
+      ],
+      "details": {
+        "tagline": "A fun side project to roast designs with humor and AI.",
+        "challenge": "What inspired this project?",
+        "problem": "What problem does it solve (or what fun does it create)?",
+        "goals": "",
+        "successMetrics": "",
+        "solution": "How does the final product work?",
+        "images": [
+          {
+            "src": "",
+            "caption": "Final designs",
+            "large": true
+          }
+        ],
+        "team": {
+          "design": [
+            "Nisha Rastogi"
+          ],
+          "product": [],
+          "research": [],
+          "engineering": [],
+          "content": []
+        },
+        "overview": "",
+        "overviewHeader": "Overview",
+        "challengeHeader": "Challenge",
+        "problemHeader": "Problem",
+        "goalsHeader": "Goals",
+        "successMetricsHeader": "Success Metrics",
+        "solutionHeader": "Final Designs",
+        "problemImage": ""
+      },
+      "heroImage": "",
+      "heroVideo": "",
+      "coverVideo": "",
+      "coverImage": "assets/roast your design cover.png",
+      "externalUrl": "https://roast-your-design.vercel.app/",
+      "releaseNotes": ""
+    },
+    {
+      "id": "project-five",
+      "title": "Agent assets",
+      "company": "Salesforce",
+      "date": "December 2025",
+      "year": "Current",
+      "category": "Product Design & Strategy",
+      "sector": "B2B SaaS",
+      "filterTag": "b2b-saas",
+      "description": "Releasing soon, stay tuned for design updates",
+      "previewColors": [
+        "#e8ecf4",
+        "#f8f0e8"
+      ],
+      "previewLabels": [
+        "Research",
+        "Prototyping"
+      ],
+      "details": {
+        "tagline": "Building modular assets that power every AI agent in Agentforce.",
+        "challenge": "",
+        "problem": "",
+        "goals": "",
+        "successMetrics": "",
+        "solution": "",
+        "images": [
+          {
+            "src": "",
+            "caption": "Final designs",
+            "large": true
+          }
+        ],
+        "team": {
+          "product": [
+            "Tulsi Patel",
+            "Melanie Zhou"
+          ],
+          "design": [
+            "Nisha Rastogi"
+          ],
+          "research": [
+            "Heather Rawlinson"
+          ],
+          "engineering": [
+            "Sissi Peng"
+          ],
+          "content": [
+            "Lori Sanders"
+          ]
+        },
+        "overview": "A centralized library of modular assets that act as the foundational building blocks for every AI agent in Agentforce. These components—skills, knowledge blocks, actions, and behaviors—let users assemble powerful agents quickly without needing technical expertise.",
+        "overviewHeader": "Overview",
+        "challengeHeader": "Challenge",
+        "problemHeader": "Problem",
+        "goalsHeader": "Goals",
+        "successMetricsHeader": "Success Metrics",
+        "solutionHeader": "Final Designs",
+        "problemImage": ""
+      },
+      "heroImage": "assets/asset library cover.png",
+      "heroVideo": "",
+      "coverVideo": "",
+      "coverImage": "assets/asset library cover.png",
+      "externalUrl": "",
+      "releaseNotes": ""
+    }
+  ]
+}

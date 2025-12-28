@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work · Nisha Rastogi</title>
+    <link rel="icon" type="image/png" href="assets/Nisha-Rastogi-logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/Nisha-Rastogi-logo.png" alt="Nisha Rastogi" class="nav-logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">About</a>
+            <a href="work.html" class="nav-link active">Work</a>
+            <a href="https://drive.google.com/file/d/1KHkzAbgnGdrXc4ZmJ6ccnRHTr3GQbf_i/view?usp=sharing" class="nav-link" target="_blank" rel="noopener">Resume</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Filter Pills -->
+        <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all">All</button>
+            <button class="filter-pill" data-filter="b2b-saas">B2B SaaS</button>
+            <button class="filter-pill" data-filter="b2c-ecommerce">B2C Ecommerce</button>
+            <button class="filter-pill" data-filter="vibe-code">Vibe Code</button>
+        </div>
+
+        <!-- Projects Section - Populated by JS -->
+        <section class="projects">
+            <!-- Project cards loaded from projects.json -->
+        </section>
+    </main>
+
+    <!-- Footer - Populated by JS -->
+    <footer class="footer">
+        <!-- Content loaded from projects.json -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
