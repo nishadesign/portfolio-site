@@ -207,10 +207,10 @@
         // Typewriter text animation
         function initRotatingText() {
             const rotatingTexts = [
-                "4 years of designing scalable products",
-                "Storytelling because work should be fun",
-                "Prototyping ideas with AI",
-                "Shipped 12+ AI product features for 200+ businesses"
+                { text: "4 years of designing scalable products", color: "#e8f0ff" },
+                { text: "Shipped 12+ AI Product Features for 200+ businesses", color: "#e8f8e8" },
+                { text: "Storytelling because work should be fun", color: "#fff0e8" },
+                { text: "Prototyping ideas with Lovable!", color: "#f0e8ff" }
             ];
             
             const textElement = document.querySelector('.rotating-text');
@@ -220,12 +220,16 @@
             let charIndex = 0;
             let isDeleting = false;
             let currentText = '';
-            const typeSpeed = 50;      // Speed of typing
-            const deleteSpeed = 30;    // Speed of deleting
+            const typeSpeed = 40;      // Speed of typing
+            const deleteSpeed = 20;    // Speed of deleting
             const pauseTime = 1500;    // Pause after typing complete
             
             function type() {
-                const fullText = rotatingTexts[currentIndex];
+                const fullText = rotatingTexts[currentIndex].text;
+                const highlightColor = rotatingTexts[currentIndex].color;
+                
+                // Set highlight color
+                textElement.style.backgroundColor = highlightColor;
                 
                 if (isDeleting) {
                     // Remove characters

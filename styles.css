@@ -1371,17 +1371,24 @@ a {
     color: var(--color-primary);
     letter-spacing: -0.02em;
     display: inline-block;
-    border-right: 2px solid var(--color-primary);
-    padding-right: 4px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.rotating-text::after {
+    content: '|';
+    color: var(--color-primary);
+    font-weight: 400;
+    margin-left: 2px;
     animation: blink 0.7s step-end infinite;
 }
 
 @keyframes blink {
     0%, 100% {
-        border-color: var(--color-primary);
+        opacity: 1;
     }
     50% {
-        border-color: transparent;
+        opacity: 0;
     }
 }
 
