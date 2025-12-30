@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -113,12 +113,18 @@
                     
                     heroSection.innerHTML = `
                         <h1 class="finding-title">${aboutPage.hero.title}</h1>
+                        <div class="rotating-text-container">
+                            <span class="rotating-text"></span>
+                        </div>
                         <p class="finding-subtitle">${aboutPage.hero.subtitle}</p>
                         ${linksHTML}
                         <div class="photo-fan">
                             ${imagesHTML}
                         </div>
                     `;
+                    
+                    // Initialize rotating text
+                    initRotatingText();
                 }
                 
                 // Render Travel Stories Description
@@ -196,6 +202,66 @@
             } catch (error) {
                 console.error('Error loading about page content:', error);
             }
+        }
+        
+        // Typewriter text animation
+        function initRotatingText() {
+            const rotatingTexts = [
+                "4 years of designing scalable products",
+                "Storytelling because work should be fun",
+                "Prototyping ideas with AI",
+                "Shipped 12+ AI product features for 200+ businesses"
+            ];
+            
+            const textElement = document.querySelector('.rotating-text');
+            if (!textElement) return;
+            
+            let currentIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let currentText = '';
+            const typeSpeed = 50;      // Speed of typing
+            const deleteSpeed = 30;    // Speed of deleting
+            const pauseTime = 1500;    // Pause after typing complete
+            
+            function type() {
+                const fullText = rotatingTexts[currentIndex];
+                
+                if (isDeleting) {
+                    // Remove characters
+                    currentText = fullText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    // Add characters
+                    currentText = fullText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                textElement.textContent = currentText;
+                
+                // Determine next action
+                if (!isDeleting && charIndex === fullText.length) {
+                    // Finished typing, pause then start deleting
+                    setTimeout(() => {
+                        isDeleting = true;
+                        type();
+                    }, pauseTime);
+                    return;
+                } else if (isDeleting && charIndex === 0) {
+                    // Finished deleting, move to next text
+                    isDeleting = false;
+                    currentIndex = (currentIndex + 1) % rotatingTexts.length;
+                    setTimeout(type, 300);
+                    return;
+                }
+                
+                // Continue typing/deleting
+                const speed = isDeleting ? deleteSpeed : typeSpeed;
+                setTimeout(type, speed);
+            }
+            
+            // Start typewriter
+            type();
         }
         
         // Load content on page load

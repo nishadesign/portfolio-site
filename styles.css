@@ -1350,9 +1350,39 @@ a {
     font-size: 1.125rem;
     color: var(--color-text-secondary);
     max-width: 900px;
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
     line-height: 1.6;
     white-space: pre-line;
+}
+
+/* Typewriter Text */
+.rotating-text-container {
+    margin: 0 auto 28px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rotating-text {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    display: inline-block;
+    border-right: 2px solid var(--color-primary);
+    padding-right: 4px;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-color: var(--color-primary);
+    }
+    50% {
+        border-color: transparent;
+    }
 }
 
 /* Hero Links */
@@ -2228,6 +2258,15 @@ a {
     
     .project-container {
         padding-top: calc(80px + var(--spacing-xl));
+    }
+    
+    .rotating-text-container {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .rotating-text {
+        font-size: 1rem;
     }
     
     .profile {
