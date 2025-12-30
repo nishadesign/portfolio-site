@@ -390,7 +390,7 @@ function showError(message) {
         <div class="error-state">
             <h1>Oops!</h1>
             <p>${message}</p>
-            <a href="index.html" class="back-home">← Back to home</a>
+            <a href="work.html" class="back-home">← Back to work</a>
         </div>
     `;
 }
