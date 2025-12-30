@@ -1608,103 +1608,6 @@ a {
     color: var(--color-text-secondary);
 }
 
-/* Experience List */
-.experience-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-}
-
-.experience-item {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: var(--spacing-md);
-}
-
-.experience-logo {
-    flex-shrink: 0;
-}
-
-.logo-placeholder {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: white;
-}
-
-.logo-placeholder.salesforce {
-    background: linear-gradient(135deg, #00a1e0 0%, #0070d2 100%);
-}
-
-.logo-placeholder.wish {
-    background: linear-gradient(135deg, #2fb7ec 0%, #17a2b8 100%);
-}
-
-.logo-placeholder.hero {
-    background: linear-gradient(135deg, #e31837 0%, #c41230 100%);
-}
-
-.logo-placeholder.education {
-    background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf4 100%);
-    font-size: 1.5rem;
-}
-
-.experience-logo img,
-.company-logo {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    object-fit: contain;
-}
-
-.experience-content {
-    padding-top: 2px;
-}
-
-.experience-company {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-text-primary);
-    margin-bottom: 2px;
-}
-
-.experience-duration {
-    font-size: 0.875rem;
-    color: var(--color-text-tertiary);
-    margin-bottom: 2px;
-}
-
-.experience-years {
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-    margin-bottom: var(--spacing-xs);
-}
-
-.experience-description {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-}
-
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-}
-
-.skill-item {
-    padding: var(--spacing-md);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    transition: border-color var(--transition-fast);
-}
 
 .skill-item:hover {
     border-color: var(--color-text-tertiary);
@@ -2372,21 +2275,6 @@ a {
     .carousel-dot {
         width: 8px;
         height: 8px;
-    }
-    
-    .experience-item {
-        grid-template-columns: 48px 1fr;
-        gap: var(--spacing-sm);
-    }
-    
-    .logo-placeholder {
-        width: 40px;
-        height: 40px;
-        font-size: 0.75rem;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
     }
     
     .spiral-container {
