@@ -310,11 +310,11 @@ a {
 
 /* Fixed background colors based on project ID */
 .project-card[data-project-id="project-one"] {
-    background: #f5f7fa;
+    background: #f0f5f0;
 }
 
 .project-card[data-project-id="project-two"] {
-    background: #f0f5f0;
+    background: #f5f7fa;
 }
 
 .project-card[data-project-id="project-three"] {

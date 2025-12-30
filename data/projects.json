@@ -101,6 +101,94 @@
   "projects": [
     {
       "id": "project-one",
+      "title": "Data Library",
+      "company": "Salesforce",
+      "date": "October 2025",
+      "year": "2023 — 2025",
+      "category": "Product Design",
+      "sector": "B2B SaaS",
+      "filterTag": "b2b-saas",
+      "description": "an end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
+      "previewColors": [
+        "#fdf4e8",
+        "#f4e8f0"
+      ],
+      "previewLabels": [
+        "Workflow",
+        "System"
+      ],
+      "details": {
+        "tagline": "Helping admins organize and manage data for AI-powered experiences.",
+        "challenge": "As more customers started experimenting with GenAI, one big theme kept surfacing: managing data was confusing and time‑consuming. Admins needed a simple and dependable way to organize content, configure response behaviors, and ensure the output from agents was grounded in the right data.",
+        "problem": "When an agent is trained on irrelevant or outdated content, it produces unreliable answers. Too much data leads to slow responses. Poorly processed data results in hallucinations. A structured pipeline—similar to washing, sorting, and storing clothes—becomes essential to keep things efficient.\n\nIn RAG, the steps mirror this process:",
+        "goals": "1. Organize and control their data sources\n2. Ensure responses were accurate and grounded\n3. Understand what was happening behind the scenes",
+        "successMetrics": "Working with PMs and engineering, we established two foundational strategies:\na. One library with multiple data sources → one retriever → lower compute costs\nb. Query once instead of multiple times",
+        "solution": "",
+        "solutionItems": [
+          {
+            "title": "Progressive disclosure",
+            "description": "Stencil loading and hover tooltips to reveal information gradually",
+            "video": "assets/data lib 1.mp4"
+          },
+          {
+            "title": "Status clarity",
+            "description": "Pipeline-based progress indicators to show what's happening",
+            "video": "assets/data lip 2.mp4"
+          },
+          {
+            "title": "Clear response settings",
+            "description": "\"Enhance data\" and \"citations\" written in non-technical language",
+            "video": "assets/data lib 3.mp4"
+          }
+        ],
+        "images": [
+          {
+            "src": "",
+            "caption": "Final designs",
+            "large": true
+          }
+        ],
+        "team": {
+          "product": [
+            "Sameer Abhinkar"
+          ],
+          "design": [
+            "Nisha Rastogi"
+          ],
+          "engineering": [
+            "Lily Xiao",
+            "Monil Sanghvi",
+            "Chang Lu",
+            "Sybil Shim and many more talented engineers"
+          ],
+          "research": [
+            "Nicholas Feining",
+            "Jinju Thomas",
+            "Tom Fuller"
+          ],
+          "content": [
+            "Melissa Curtis",
+            "Lori Sanders"
+          ]
+        },
+        "overview": "Building AI agents is only as good as the data they rely on. During my time on the Agentforce platform team at Salesforce, I led the end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
+        "problemImage": "assets/laundry day example.png",
+        "overviewHeader": "Overview",
+        "challengeHeader": "Challenge",
+        "problemHeader": "Why data management matters?",
+        "goalsHeader": "User Goals",
+        "successMetricsHeader": "Product Strategy",
+        "solutionHeader": "Key UX moments"
+      },
+      "heroImage": "assets/data library cover.png",
+      "heroVideo": "",
+      "coverVideo": "",
+      "coverImage": "assets/data lib cover.png",
+      "externalUrl": "",
+      "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
+    },
+    {
+      "id": "project-two",
       "title": "Agent Builder Platform",
       "company": "Salesforce",
       "date": "October 2024",
@@ -197,94 +285,6 @@
       "coverImage": "assets/agent creator cover.png",
       "externalUrl": "",
       "releaseNotes": "https://www.salesforce.com/agentforce/agent-builder/"
-    },
-    {
-      "id": "project-two",
-      "title": "Data Library",
-      "company": "Salesforce",
-      "date": "October 2025",
-      "year": "2023 — 2025",
-      "category": "Product Design",
-      "sector": "B2B SaaS",
-      "filterTag": "b2b-saas",
-      "description": "an end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
-      "previewColors": [
-        "#fdf4e8",
-        "#f4e8f0"
-      ],
-      "previewLabels": [
-        "Workflow",
-        "System"
-      ],
-      "details": {
-        "tagline": "Helping admins organize and manage data for AI-powered experiences.",
-        "challenge": "As more customers started experimenting with GenAI, one big theme kept surfacing: managing data was confusing and time‑consuming. Admins needed a simple and dependable way to organize content, configure response behaviors, and ensure the output from agents was grounded in the right data.",
-        "problem": "When an agent is trained on irrelevant or outdated content, it produces unreliable answers. Too much data leads to slow responses. Poorly processed data results in hallucinations. A structured pipeline—similar to washing, sorting, and storing clothes—becomes essential to keep things efficient.\n\nIn RAG, the steps mirror this process:",
-        "goals": "1. Organize and control their data sources\n2. Ensure responses were accurate and grounded\n3. Understand what was happening behind the scenes",
-        "successMetrics": "Working with PMs and engineering, we established two foundational strategies:\na. One library with multiple data sources → one retriever → lower compute costs\nb. Query once instead of multiple times",
-        "solution": "",
-        "solutionItems": [
-          {
-            "title": "Progressive disclosure",
-            "description": "Stencil loading and hover tooltips to reveal information gradually",
-            "video": "assets/data lib 1.mp4"
-          },
-          {
-            "title": "Status clarity",
-            "description": "Pipeline-based progress indicators to show what's happening",
-            "video": "assets/data lip 2.mp4"
-          },
-          {
-            "title": "Clear response settings",
-            "description": "\"Enhance data\" and \"citations\" written in non-technical language",
-            "video": "assets/data lib 3.mp4"
-          }
-        ],
-        "images": [
-          {
-            "src": "",
-            "caption": "Final designs",
-            "large": true
-          }
-        ],
-        "team": {
-          "product": [
-            "Sameer Abhinkar"
-          ],
-          "design": [
-            "Nisha Rastogi"
-          ],
-          "engineering": [
-            "Lily Xiao",
-            "Monil Sanghvi",
-            "Chang Lu",
-            "Sybil Shim and many more talented engineers"
-          ],
-          "research": [
-            "Nicholas Feining",
-            "Jinju Thomas",
-            "Tom Fuller"
-          ],
-          "content": [
-            "Melissa Curtis",
-            "Lori Sanders"
-          ]
-        },
-        "overview": "Building AI agents is only as good as the data they rely on. During my time on the Agentforce platform team at Salesforce, I led the end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
-        "problemImage": "assets/laundry day example.png",
-        "overviewHeader": "Overview",
-        "challengeHeader": "Challenge",
-        "problemHeader": "Why data management matters?",
-        "goalsHeader": "User Goals",
-        "successMetricsHeader": "Product Strategy",
-        "solutionHeader": "Key UX moments"
-      },
-      "heroImage": "assets/data library cover.png",
-      "heroVideo": "",
-      "coverVideo": "",
-      "coverImage": "assets/data lib cover.png",
-      "externalUrl": "",
-      "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
     },
     {
       "id": "project-three",
