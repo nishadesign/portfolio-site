@@ -934,7 +934,7 @@ a {
 }
 
 .solution-item-block:first-of-type {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
 }
 
 .solution-item-title {
