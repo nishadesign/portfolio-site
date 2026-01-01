@@ -713,9 +713,7 @@ a {
 
 /* ===== Project Sections ===== */
 .section-divider {
-    border: none;
-    border-top: 1px solid var(--color-border);
-    margin: var(--spacing-lg) 0;
+    display: none;
 }
 
 .project-overview {
@@ -933,7 +931,6 @@ a {
 .solution-item-block {
     margin-top: var(--spacing-xl);
     padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--color-border);
 }
 
 .solution-item-block:first-of-type {
@@ -1228,7 +1225,6 @@ a {
 .project-credits {
     margin: 0 0 var(--spacing-lg);
     padding: var(--spacing-lg) 0;
-    border-top: 1px solid var(--color-border);
     position: relative;
     background-color: var(--color-bg);
 }
