@@ -102,7 +102,6 @@ function renderProject(project, nextProject) {
 
         <!-- Divider - only show if there's content below -->
         ${details.challenge || details.problem || details.goals || details.successMetrics ? `
-        <hr class="section-divider">
         ` : ''}
 
         <!-- Challenge Section -->
@@ -168,7 +167,6 @@ function renderProject(project, nextProject) {
 
         <!-- Divider before Final Designs - only show if there's content -->
         ${details.solution || details.solutionItems || details.customSections ? `
-        <hr class="section-divider">
         ` : ''}
 
         <!-- Solution / Final Designs Section -->
@@ -256,7 +254,6 @@ function renderProject(project, nextProject) {
         `).join('') : ''}
 
         <!-- Divider before Next Project -->
-        <hr class="section-divider">
 
         <!-- Next Project -->
         <section class="next-project">
