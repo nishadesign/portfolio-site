@@ -226,13 +226,11 @@ a {
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid var(--color-border);
 }
 
 .about-container .profile {
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid var(--color-border);
 }
 
 .profile-photo {
@@ -1331,9 +1329,8 @@ a {
 /* ===== About Page Hero Section ===== */
 .finding-myself-section {
     text-align: center;
-    padding: 80px 0 100px;
-    margin-bottom: var(--spacing-xl);
-    border-bottom: 1px solid var(--color-border);
+    padding: 60px 0 40px;
+    margin-bottom: var(--spacing-md);
 }
 
 .finding-title {
@@ -1504,7 +1501,6 @@ a {
 .about-section {
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-xl);
-    border-bottom: 1px solid var(--color-border);
 }
 
 .about-section:last-of-type {
@@ -1781,7 +1777,7 @@ a {
 
 /* ===== Testimonials Section ===== */
 .testimonials-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0;
     overflow: hidden;
     background: var(--color-bg);
 }
