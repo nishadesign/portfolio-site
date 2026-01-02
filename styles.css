@@ -177,7 +177,7 @@ a {
 .about-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: calc(60px + var(--spacing-xl)) var(--spacing-lg) var(--spacing-xl);
+    padding: calc(60px + var(--spacing-md)) var(--spacing-lg) var(--spacing-md);
 }
 
 .project-container {
@@ -1325,8 +1325,8 @@ a {
 /* ===== About Page Hero Section ===== */
 .finding-myself-section {
     text-align: center;
-    padding: 60px 0 40px;
-    margin-bottom: var(--spacing-md);
+    padding: 40px 0 20px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .finding-title {
@@ -1343,15 +1343,15 @@ a {
     font-size: 1.125rem;
     color: var(--color-text-secondary);
     max-width: 900px;
-    margin: 0 auto 24px;
+    margin: 0 auto 16px;
     line-height: 1.6;
     white-space: pre-line;
 }
 
 /* Typewriter Text */
 .rotating-text-container {
-    margin: 0 auto 28px;
-    height: 60px;
+    margin: 0 auto 16px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1773,14 +1773,14 @@ a {
 
 /* ===== Testimonials Section ===== */
 .testimonials-section {
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
     overflow: hidden;
     background: var(--color-bg);
 }
 
 .testimonials-header {
     max-width: 1400px;
-    margin: 0 auto var(--spacing-lg);
+    margin: 0 auto var(--spacing-sm);
     padding: 0 var(--spacing-lg);
 }
 
