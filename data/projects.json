@@ -346,6 +346,55 @@
       "releaseNotes": ""
     },
     {
+      "id": "project-1767386671661",
+      "title": "My Portfolio",
+      "company": "",
+      "date": "January 2026",
+      "year": "2026",
+      "category": "Product Design",
+      "sector": "Vibe Coded",
+      "filterTag": "vibe-coded",
+      "description": "I built my entire portfolio using Cursor in 2 days. It's all vibe coded, I learned so much about how to use AI and how to prompt it effectively! This might be the most fun I had with AI.",
+      "previewColors": [
+        "#f5f7fa",
+        "#f0f5f0"
+      ],
+      "previewLabels": [
+        "Feature A",
+        "Feature B"
+      ],
+      "details": {
+        "tagline": "Project tagline goes here",
+        "overviewHeader": "Overview",
+        "overview": "Describe your project overview...",
+        "challengeHeader": "Challenge",
+        "challenge": "Describe the challenge...",
+        "solutionHeader": "Solution",
+        "solutionItems": [],
+        "problemHeader": "Problem",
+        "problem": "",
+        "problemImage": "",
+        "goalsHeader": "Goals",
+        "goals": "",
+        "successMetricsHeader": "Success Metrics",
+        "successMetrics": "",
+        "solution": "",
+        "team": {
+          "product": [],
+          "design": [],
+          "research": [],
+          "engineering": [],
+          "content": []
+        }
+      },
+      "heroImage": "",
+      "heroVideo": "",
+      "coverVideo": "",
+      "coverImage": "assets/nisha rastogi.png",
+      "externalUrl": "https://nisha-rastogi.com/about.html",
+      "releaseNotes": ""
+    },
+    {
       "id": "project-four",
       "title": "Roast your design",
       "company": "Personal Project",
@@ -353,7 +402,7 @@
       "year": "2025",
       "category": "Side Project",
       "sector": "Independent",
-      "filterTag": "vibe-code",
+      "filterTag": "vibe-coded",
       "description": "Take a break from the mundane design work using 'Roast your design', a webapp built for fun and experimentation",
       "previewColors": [
         "#f4f0e8",
