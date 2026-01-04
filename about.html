@@ -191,7 +191,6 @@
                     if (profile.social?.substack) footerLinks.push(`<a href="${profile.social.substack}" class="footer-link" target="_blank" rel="noopener">Substack</a>`);
                     
                     footer.innerHTML = `
-                        <a href="mailto:${profile.email}" class="footer-email">${profile.email}</a>
                         <div class="footer-links">
                             ${footerLinks.join('')}
                         </div>
