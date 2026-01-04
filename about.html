@@ -98,16 +98,13 @@
                     // Build links buttons
                     const links = aboutPage.hero.links || {};
                     let linksHTML = '';
-                    if (links.linkedin || links.substack || links.email) {
+                    if (links.linkedin || links.substack) {
                         linksHTML = '<div class="hero-links">';
                         if (links.linkedin) {
                             linksHTML += `<a href="${links.linkedin}" target="_blank" rel="noopener" class="hero-link-btn">LinkedIn</a>`;
                         }
                         if (links.substack) {
                             linksHTML += `<a href="${links.substack}" target="_blank" rel="noopener" class="hero-link-btn">Substack</a>`;
-                        }
-                        if (links.email) {
-                            linksHTML += `<a href="mailto:${links.email}" class="hero-link-btn">Email</a>`;
                         }
                         linksHTML += '</div>';
                     }
