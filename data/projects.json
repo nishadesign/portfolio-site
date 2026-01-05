@@ -19,7 +19,7 @@
   "aboutPage": {
     "hero": {
       "title": "Nisha Rastogi",
-      "subtitle": "Designer by day. CrossFitter by evening. Travel planner by night.\nWeekends spent vibe coding at SF hackathons with my partner.\nEvery second counts :)",
+      "subtitle": "I design, I vibe code prototypes, I define strategies and I help companies ship. I thrive in the messy '0 to 1' phase, in the velocity and ownership of building something from scratch.\n\n<i>*open to founding designing roles</i>",
       "images": [
         "assets/profile image 2.jpg",
         "assets/profile image 5.JPG",
@@ -44,56 +44,56 @@
     "values": [
       {
         "title": "Structure in chaos",
-        "description": "Staying calm and collected under pressure and maintaining a steady demeanor helps me focus on finding solutions rather than getting caught up in the stress. "
+        "description": "Stay calm and collected under pressure and focus on finding solutions rather than stressing about it. "
       },
       {
         "title": "Storytelling",
-        "description": "In my work, I use storytelling to bring ideas to life, communicate complex concepts in relatable ways, and build tangible connections with audiences."
+        "description": "Bring ideas to life, communicate complex concepts, and build tangible connections with audiences."
       },
       {
         "title": "Growth mindset",
-        "description": "Every opportunity is an opportunity for me to learn, improve, and adapt. Challenges don’t intimidate me—they motivate me!"
+        "description": "Every opportunity is an opportunity for me to learn, improve, adapt and repeat. "
       },
       {
-        "title": "Strong stakeholder relationship",
-        "description": "A great UI is a reflection of the strong collaboration between designers, engineers and product managers."
+        "title": "Speed & Scrappiness",
+        "description": "The only design that creates value is the one in the user's hands. "
       }
     ],
     "testimonials": [
       {
         "name": "Shalini Johar",
         "company": "Director of Design @ Salesforce",
-        "recommendation": "Over the past few years, Nisha has led the design for several key initiatives, including Agent Builder, Agentforce Data Library, and most recently, Agent Asset Library. She consistently takes the time to deeply understand the products she designs, from both a business and technical perspective.",
+        "recommendation": "\"...deeply understands the products she designs, from both a business and technical perspective\"",
         "image": "assets/Shalini Johar dp.jpeg"
       },
       {
         "name": "Scott Pitkin",
         "company": "Director of Design @Salesforce",
-        "recommendation": "Nisha is an outstanding product designer who creates strong relationships, juggles multiple complex projects, and delivers with excellence. She has wonderful energy and enthusiasm for design which uplifts and inspires. I was impressed by her strong sense of ownership for the product area, her collaboration across teams, and ability to establish and champion the UX process on a variety of project types.",
+        "recommendation": "\"...outstanding product designer who creates strong relationships, <strong> juggles multiple complex projects </strong>, and delivers with excellence.\"",
         "image": "assets/scott pitkin.jpeg"
       },
       {
         "name": "Sybil Shim",
         "company": "Principal Engineer @ Salesforce",
-        "recommendation": "Nisha has been a driving force in shaping the user experience for ADL since the very beginning. Her ability to deeply understand user needs and translate them into intuitive, thoughtful designs has had a lasting impact on the product. From early concepts to detailed workflows, she’s consistently set a high bar for usability and clarity. ",
+        "recommendation": "\"...a <strong>driving force in shaping the user experience</strong> for Data for AI agents.\"",
         "image": "assets/Sybil.jpeg"
       },
       {
         "name": "David Tsai",
         "company": "Principal Designer @ Salesforce",
-        "recommendation": "I had the honor of being Nisha's manager when she was a Futureforce intern at Salesforce. Nisha consistently found opportunities for self-improvement, by being openminded to other people's ideas and asking for feedback from others. Whether it was design, research, business, communication, presentation, or leadership skills, she wanted to obtain that knowledge. ",
+        "recommendation": "\"...design, research, business, communication, presentation, or leadership skills, demonmstrated excellent skills\"",
         "image": "assets/David Tsai.jpeg"
       },
       {
         "name": "Yiran Ma",
         "company": "Senior Product Designer @ Wish",
-        "recommendation": "Within a few months on that project, she quickly became a domain expert that the rest of the team would turn to for contexts and insights. She’s extremely self-driven, always seeking feedback and new challenges. She’s also a delight to work with, or simply to be around — Her positivity always makes my day. I would not hesitate to work with her again!",
+        "recommendation": "\"...she quickly became a <strong>domain expert that the rest of the team would turn to</strong> for contexts and insights.\"",
         "image": "assets/Yiran Ma.jpeg"
       },
       {
         "name": "Tanner McGrath",
         "company": "VP of Product @ Salesforce",
-        "recommendation": "Nisha has been critical in setting the product vision for ADL and shaping our partnership with Data Cloud. She’s had a major impact helping set direction context engineering and other new strategic initiatives we need to drive. Her ability to bring clarity to both product and design decisions has accelerated our progress in high-ambiguity areas.",
+        "recommendation": "\"...her ability to bring clarity to both product and design decisions has <strong>accelerated our progress in high-ambiguity areas</strong>\"",
         "image": "assets/Tanner McGrath.jpeg"
       }
     ]
