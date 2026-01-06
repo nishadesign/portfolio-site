@@ -49,6 +49,56 @@
         </div>
     </section>
 
+    <!-- How I Got Into UX Section -->
+    <section class="ux-journey-section">
+        <div class="ux-journey-container">
+            <h2 class="values-header">How I got into UX</h2>
+            <p class="ux-journey-intro">My journey started from my love for <strong>Automobiles</strong> — the greatest machine built for humans! 🚗</p>
+            
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="journey-icon">🚗</div>
+                    <div class="journey-content">
+                        <h3>Automobile Engineering</h3>
+                        <p>Studied how machines are designed for humans — ergonomics, controls, and the driver experience.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-connector">→</div>
+                
+                <div class="journey-step">
+                    <div class="journey-icon">💡</div>
+                    <div class="journey-content">
+                        <h3>The "Aha!" Moment</h3>
+                        <p>Realized that designing for humans isn't just about machines — it's about every experience.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-connector">→</div>
+                
+                <div class="journey-step">
+                    <div class="journey-icon">🎨</div>
+                    <div class="journey-content">
+                        <h3>Human-Centered Design</h3>
+                        <p>Pivoted to UW's HCDE program to master the art of designing digital experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-connector">→</div>
+                
+                <div class="journey-step">
+                    <div class="journey-icon">✨</div>
+                    <div class="journey-content">
+                        <h3>Today: AI Products</h3>
+                        <p>Now I design AI experiences at Salesforce — still making machines work better for humans!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="ux-journey-footer">From car dashboards to AI dashboards — the mission remains the same: <em>design for humans</em>.</p>
+        </div>
+    </section>
+
     <main class="about-container about-container-continued">
         <!-- Travel Stories Spiral Gallery -->
         <section class="about-section spiral-section">
@@ -90,7 +140,7 @@
                 const heroSection = document.getElementById('hero-section');
                 if (heroSection && aboutPage.hero) {
                     const imagesHTML = aboutPage.hero.images.map((img, index) => `
-                        <div class="fan-card" style="--index: ${index};">
+                        <div class="bento-item bento-item-${index + 1}">
                             <img src="${img}" alt="Personal photo">
                         </div>
                     `).join('');
@@ -112,11 +162,12 @@
                     heroSection.innerHTML = `
                         <h1 class="finding-title">${aboutPage.hero.title}</h1>
                         <div class="rotating-text-container">
+                            <span class="static-text">I design and ship scalable products by</span>
                             <span class="rotating-text"></span>
                         </div>
                         <p class="finding-subtitle">${aboutPage.hero.subtitle}</p>
                         ${linksHTML}
-                        <div class="photo-fan">
+                        <div class="bento-grid">
                             ${imagesHTML}
                         </div>
                     `;
@@ -134,16 +185,37 @@
                 // Render Values Section
                 const valuesSection = document.getElementById('values-section');
                 if (valuesSection && aboutPage.values) {
-                    const valuesHTML = aboutPage.values.map(value => `
-                        <div class="value-item">
-                            <h3 class="value-title">${value.title}</h3>
-                            <p class="value-description">${value.description}</p>
-                        </div>
-                    `).join('');
+                    // Soft, warm colors for each card (subtle but visible)
+                    const cardColors = [
+                        { bg: '#f7f4f0', text: '#1a1a1a' }, // Subtle cream
+                        { bg: '#f5f0f7', text: '#1a1a1a' }, // Subtle lavender
+                        { bg: '#f0f7f4', text: '#1a1a1a' }, // Subtle mint
+                        { bg: '#fdf4f4', text: '#1a1a1a' }  // Subtle peach
+                    ];
+                    
+                    // Icons for each value
+                    const valueIcons = [
+                        '📐', // Structure in chaos - grid/ruler icon
+                        '📖', // Storytelling - book icon
+                        '📈', // Growth mindset - growth chart icon
+                        '⚡'  // Speed & Scrappiness - lightning icon
+                    ];
+                    
+                    const valuesHTML = aboutPage.values.map((value, index) => {
+                        const colors = cardColors[index % cardColors.length];
+                        const icon = valueIcons[index] || '✨';
+                        return `
+                            <div class="value-card" style="background-color: ${colors.bg}; color: ${colors.text};">
+                                <div class="value-icon">${icon}</div>
+                                <h3 class="value-title">${value.title}</h3>
+                                <p class="value-description">${value.description}</p>
+                            </div>
+                        `;
+                    }).join('');
                     
                     valuesSection.innerHTML = `
                         <div class="values-layout">
-                            <h2 class="values-header">My super powers</h2>
+                            <h2 class="values-header">How I create clarity, momentum, and impact...</h2>
                             <div class="values-grid">
                                 ${valuesHTML}
                             </div>
@@ -151,34 +223,27 @@
                     `;
                 }
                 
-                // Render Testimonials
+                // Render Testimonials - Auto-scrolling track
                 const testimonialsTrack = document.getElementById('testimonials-track');
                 if (testimonialsTrack && aboutPage.testimonials && aboutPage.testimonials.length > 0) {
-                    // Duplicate testimonials enough times to fill the screen and enable smooth looping
-                    const minCards = Math.max(8, aboutPage.testimonials.length * 2);
-                    let allTestimonials = [];
-                    while (allTestimonials.length < minCards) {
-                        allTestimonials = [...allTestimonials, ...aboutPage.testimonials];
-                    }
-                    // Double for seamless loop
-                    allTestimonials = [...allTestimonials, ...allTestimonials];
+                    const testimonials = aboutPage.testimonials;
                     
-                    testimonialsTrack.innerHTML = allTestimonials.map((t, i) => {
-                        // Create varied rotations: -3, -1.5, 0, 1.5, 3 degrees
-                        const rotations = [-3, -1.5, 0, 1.5, 3, 2, -2, 1, -1];
-                        const rotation = rotations[i % rotations.length];
-                        return `
-                        <div class="testimonial-card" style="--rotation: ${rotation}deg">
-                            <div class="testimonial-header">
+                    // Duplicate testimonials for seamless loop
+                    const allTestimonials = [...testimonials, ...testimonials];
+                    
+                    // Render cards
+                    testimonialsTrack.innerHTML = allTestimonials.map((t) => `
+                        <div class="testimonial-card">
+                            <p class="testimonial-quote">${t.recommendation}</p>
+                            <div class="testimonial-author">
                                 ${t.image ? `<div class="testimonial-avatar"><img src="${t.image}" alt="${t.name}"></div>` : '<div class="testimonial-avatar-placeholder"></div>'}
                                 <div class="testimonial-info">
-                                    <h3 class="testimonial-name">${t.name}</h3>
-                                    <p class="testimonial-company">${t.company}</p>
+                                    <h4>${t.name}</h4>
+                                    <p>${t.company}</p>
                                 </div>
                             </div>
-                            <p class="testimonial-text">${t.recommendation}</p>
                         </div>
-                    `}).join('');
+                    `).join('');
                 }
                 
                 // Render Footer
@@ -201,13 +266,13 @@
             }
         }
         
-        // Typewriter text animation
+        // Rotating text animation with typewriter effect
         function initRotatingText() {
             const rotatingTexts = [
-                { text: "4 years of designing scalable products", color: "#e8f0ff" },
-                { text: "Shipped 12+ AI Product Features for 200+ businesses", color: "#e8f8e8" },
-                { text: "Storytelling because work should be fun", color: "#fff0e8" },
-                { text: "Prototyping ideas with Lovable!", color: "#f0e8ff" }
+                { text: "shaping product strategy", color: "#e8f0ff" },
+                { text: "crafting user experiences", color: "#e8f8e8" },
+                { text: "rapidly prototyping ideas", color: "#fff0e8" },
+                { text: "shipping real features", color: "#f0e8ff" }
             ];
             
             const textElement = document.querySelector('.rotating-text');
@@ -217,9 +282,9 @@
             let charIndex = 0;
             let isDeleting = false;
             let currentText = '';
-            const typeSpeed = 40;      // Speed of typing
-            const deleteSpeed = 20;    // Speed of deleting
-            const pauseTime = 1500;    // Pause after typing complete
+            const typeSpeed = 50;      // Speed of typing (ms per character)
+            const deleteSpeed = 30;    // Speed of deleting (ms per character)
+            const pauseTime = 2000;    // Pause after typing complete (2 seconds)
             
             function type() {
                 const fullText = rotatingTexts[currentIndex].text;
@@ -265,8 +330,11 @@
             type();
         }
         
-        // Load content on page load
-        loadAboutPageContent();
+        // Load content on page load, then init animations
+        loadAboutPageContent().then(() => {
+            // Small delay to ensure DOM is updated
+            setTimeout(initScrollAnimations, 100);
+        });
 
         // ========== Spiral Gallery ==========
         class SpiralGallery {
@@ -503,6 +571,93 @@
         document.addEventListener('DOMContentLoaded', () => {
             new SpiralGallery();
         });
+
+        // ========== Scroll Animations (like HappyRobot) ==========
+        function initScrollAnimations() {
+            console.log('Initializing scroll animations...');
+            
+            // Add scroll-animate class to sections
+            const animateSections = [
+                '.values-section',
+                '.testimonials-section',
+                '.ux-journey-section',
+                '.spiral-section',
+                '.about-footer'
+            ];
+            
+            animateSections.forEach(selector => {
+                const el = document.querySelector(selector);
+                if (el) {
+                    el.classList.add('scroll-animate');
+                    console.log('Added scroll-animate to:', selector);
+                }
+            });
+            
+            // Animate hero elements on load
+            const heroTitle = document.querySelector('.finding-title');
+            const heroSubtitle = document.querySelector('.finding-subtitle');
+            const rotatingText = document.querySelector('.rotating-text-container');
+            const heroLinks = document.querySelector('.hero-links');
+            
+            [heroTitle, heroSubtitle, rotatingText, heroLinks].forEach((el, i) => {
+                if (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                    el.style.transitionDelay = `${i * 0.15}s`;
+                    
+                    // Trigger animation
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, 50);
+                }
+            });
+
+            // Add stagger animations to grid items
+            document.querySelectorAll('.values-grid').forEach(grid => {
+                grid.classList.add('stagger-children');
+                grid.querySelectorAll('.value-card').forEach((card, i) => {
+                    card.classList.add('scroll-animate');
+                    card.style.setProperty('--stagger-index', i);
+                });
+            });
+
+            // Add stagger to bento items
+            document.querySelectorAll('.bento-item').forEach((item, i) => {
+                item.classList.add('scroll-animate-scale');
+                item.style.transitionDelay = `${i * 0.1}s`;
+            });
+
+            // Add stagger to journey steps
+            document.querySelectorAll('.journey-step').forEach((step, i) => {
+                step.classList.add('scroll-animate');
+                step.style.transitionDelay = `${i * 0.15}s`;
+            });
+
+            // Add to testimonial cards
+            document.querySelectorAll('.testimonial-card').forEach((card, i) => {
+                card.classList.add('scroll-animate');
+                card.style.transitionDelay = `${i * 0.1}s`;
+            });
+
+            // Intersection Observer for triggering animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all animated elements
+            document.querySelectorAll('.scroll-animate, .scroll-animate-scale, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
     </script>
 </body>
 </html>

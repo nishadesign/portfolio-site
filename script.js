@@ -161,7 +161,7 @@ function renderFooter(profile) {
 function initAnimations() {
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -50px 0px',
         threshold: 0.1
     };
 
@@ -169,15 +169,31 @@ function initAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                entry.target.classList.add('in-view');
             }
         });
     }, observerOptions);
 
-    // Observe project cards
+    // Observe project cards with scroll animation
     document.querySelectorAll('.project-card').forEach((card, index) => {
-        card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+        card.classList.add('scroll-animate');
+        card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
     });
+    
+    // Add scroll animation to filter pills
+    document.querySelectorAll('.filter-pill').forEach((pill, index) => {
+        pill.classList.add('scroll-animate');
+        pill.style.transitionDelay = `${index * 0.05}s`;
+        observer.observe(pill);
+    });
+    
+    // Animate footer
+    const footer = document.querySelector('.footer');
+    if (footer) {
+        footer.classList.add('scroll-animate');
+        observer.observe(footer);
+    }
 
     // Add hover effects to preview cards
     document.querySelectorAll('.preview-card').forEach(card => {

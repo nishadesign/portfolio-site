@@ -19,7 +19,7 @@
   "aboutPage": {
     "hero": {
       "title": "Nisha Rastogi",
-      "subtitle": "I design, I vibe code prototypes, I define strategies and I help companies ship. I thrive in the messy '0 to 1' phase, in the velocity and ownership of building something from scratch.\n\n<i>*open to founding designing roles</i>",
+      "subtitle": "4+ years of work experience, thriving in the messy '0 to 1' phase",
       "images": [
         "assets/profile image 2.jpg",
         "assets/profile image 5.JPG",
@@ -44,19 +44,19 @@
     "values": [
       {
         "title": "Structure in chaos",
-        "description": "Stay calm and collected under pressure and focus on finding solutions rather than stressing about it. "
+        "description": "I stay calm in ambiguity and turn messy inputs into clear frameworks, priorities, and next steps so teams can move forward with confidence."
       },
       {
         "title": "Storytelling",
-        "description": "Bring ideas to life, communicate complex concepts, and build tangible connections with audiences."
+        "description": "I translate complex ideas into clear narratives that align teams, influence decisions, and make products easier to understand and adopt."
       },
       {
         "title": "Growth mindset",
-        "description": "Every opportunity is an opportunity for me to learn, improve, adapt and repeat. "
+        "description": "I treat every project as a learning loop, continuously testing, adapting, and improving based on feedback and outcomes."
       },
       {
         "title": "Speed & Scrappiness",
-        "description": "The only design that creates value is the one in the user's hands. "
+        "description": "I move fast without losing intent, prototyping early, shipping often, and focusing on what creates real value for users."
       }
     ],
     "testimonials": [
@@ -180,10 +180,10 @@
         "successMetricsHeader": "Product Strategy",
         "solutionHeader": "Key UX moments"
       },
-      "heroImage": "assets/data library cover.png",
+      "heroImage": "assets/data lib hero.png",
       "heroVideo": "",
-      "coverVideo": "",
-      "coverImage": "assets/data lib cover.png",
+      "coverVideo": "assets/adl cover video.mp4",
+      "coverImage": "",
       "externalUrl": "",
       "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
     },
