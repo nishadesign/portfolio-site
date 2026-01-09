@@ -19,11 +19,11 @@
   "aboutPage": {
     "hero": {
       "title": "Nisha Rastogi",
-      "subtitle": "4+ years of work experience, thriving in the messy '0 to 1' phase",
+      "subtitle": "I design scalable, human-centered AI experiences that make complex systems feel simple. Currently working on AI products at Salesforce.",
       "images": [
-        "assets/profile image 2.jpg",
-        "assets/profile image 5.JPG",
         "assets/profile image 1.jpg",
+        "assets/profile image 5.JPG",
+        "assets/profile image 2.jpg",
         "assets/profile image 3.JPG",
         "assets/profile image 4.JPG"
       ],
@@ -31,15 +31,35 @@
         "linkedin": "https://www.linkedin.com/in/nisha-rastogi/",
         "substack": "https://substack.com/@rustog?",
         "email": "nrnisha.1997@gmail.com"
-      }
+      },
+      "imageDescriptions": [
+        "I feel most myself when I’m outside, fresh air and open skies. ",
+        "Film over DSLRs, always. Fewer retakes, more presence. Just catching the moment as it is.",
+        "Before design, I was an automobile engineer. A past chapter, but one that shaped how I think.",
+        "Traveling for the stories, the conversations, and the people I haven’t met yet.",
+        "New to CrossFit, still learning, still showing up. Strength looks different every week."
+      ]
     },
+    "metrics": [
+      {
+        "value": "4+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "3M+",
+        "label": "Users Impacted"
+      },
+      {
+        "value": "12+",
+        "label": "Products Shipped"
+      }
+    ],
+    "valuesTitle": "Design Philosophy",
+    "testimonialsTitle": "What people say about me",
     "about": {
       "tagline": "Designing by day, CrossFit by night, always chasing the next destination",
       "description1": "I'm a product designer working at the intersection of AI, systems, and human behavior. I currently design platform tools at Salesforce, where I focus on making complex technology feel clear, usable, and grounded in real user needs.",
       "description2": "Outside of work, you'll usually find me traveling or deep into a CrossFit routine. Travel and meeting people across cultures has strengthened my empathy and curiosity, while CrossFit has taught me discipline, consistency, and respect for progress over perfection. Both show up in my work. I design with intention, resilience, and a bias toward action."
-    },
-    "travelStories": {
-      "description": "Inspired by soot.com, I built this travel stories canvas, zoom in to take a peek!"
     },
     "values": [
       {
@@ -101,14 +121,14 @@
   "projects": [
     {
       "id": "project-one",
-      "title": "Data Library",
+      "title": "Making Agents Smarter With Data",
       "company": "Salesforce",
       "date": "October 2025",
-      "year": "2023 — 2025",
+      "year": "2024 — Present",
       "category": "Product Design",
       "sector": "B2B SaaS",
       "filterTag": "b2b-saas",
-      "description": "an end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
+      "description": "End‑to‑end experience that helps admins organize and manage data for Retrieval Augmented Generation (RAG) making agents smarter and accurate.",
       "previewColors": [
         "#fdf4e8",
         "#f4e8f0"
@@ -118,12 +138,12 @@
         "System"
       ],
       "details": {
-        "tagline": "Helping admins organize and manage data for AI-powered experiences.",
-        "challenge": "As more customers started experimenting with GenAI, one big theme kept surfacing: managing data was confusing and time‑consuming. Admins needed a simple and dependable way to organize content, configure response behaviors, and ensure the output from agents was grounded in the right data.",
+        "tagline": "End‑to‑end experience that helps admins organize and manage data for Retrieval Augmented Generation (RAG) making agents smarter and accurate with the right context. ",
+        "challenge": "Without the right data, agents feel generic, disconnected, and unreliable.\nWith the right data, agents deliver accurate, company-specific answers and can take meaningful action.\n",
         "problem": "When an agent is trained on irrelevant or outdated content, it produces unreliable answers. Too much data leads to slow responses. Poorly processed data results in hallucinations. A structured pipeline—similar to washing, sorting, and storing clothes—becomes essential to keep things efficient.\n\nIn RAG, the steps mirror this process:",
         "goals": "1. Organize and control their data sources\n2. Ensure responses were accurate and grounded\n3. Understand what was happening behind the scenes",
         "successMetrics": "Working with PMs and engineering, we established two foundational strategies:\na. One library with multiple data sources → one retriever → lower compute costs\nb. Query once instead of multiple times",
-        "solution": "",
+        "solution": "→ Explainability first: empower users to make decisions confidently\n→ Progressive disclosure: reveal complexity only when needed\n→ Powerful defaults: smart defaults to get users started quickly",
         "solutionItems": [
           {
             "title": "Progressive disclosure",
@@ -171,18 +191,59 @@
             "Lori Sanders"
           ]
         },
-        "overview": "Building AI agents is only as good as the data they rely on. During my time on the Agentforce platform team at Salesforce, I led the end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).",
+        "overview": "Building AI agents is only as good as the data they rely on. I led the end‑to‑end UX for the Data Library—a core experience that helps admins organize, clean, and manage data for retrieval augmented generation (RAG).\n\n",
         "problemImage": "assets/laundry day example.png",
         "overviewHeader": "Overview",
         "challengeHeader": "Challenge",
         "problemHeader": "Why data management matters?",
         "goalsHeader": "User Goals",
         "successMetricsHeader": "Product Strategy",
-        "solutionHeader": "Key UX moments"
+        "solutionHeader": "Key UX moments",
+        "role": "Lead Product Designer",
+        "timeline": "Jul 2024 - Present",
+        "teamDescription": "1 Product Designer\n2 Product Managers\n10 Engineers\n2 Researcher\n1 Data Scientist",
+        "responsibilities": "Product Strategy, UX Design, Usability Research",
+        "tools": "",
+        "overviewLabel": "Overview",
+        "overviewTitle": "My Role",
+        "challengeLabel": "Problem",
+        "challengeTitle": "Why data is important for AI Agents?",
+        "discoveryLabel": "Discovery",
+        "discoveryTitle": "Research Insights",
+        "discovery": "Based on the research we conducted with our top 20 customers, we learned the following: \n➡ Gen AI is expensive: the upfront costs, ongoing maintenance, and hidden complexity made adopting AI seem out of reach.\n\n➡ Requires technical expertise: needs engineers, data scientists, and ML experts to build anything meaningful, it’s not very DIY friendly. \n\n➡ Unclear value proposition: users couldn’t immediately see how Gen AI fit into their workflows or delivered tangible ROI.",
+        "processLabel": "Design Process",
+        "processTitle": "How we got there",
+        "process": "",
+        "solutionLabel": "Solution",
+        "solutionTitle": "Data Library experience",
+        "impactLabel": "Results",
+        "impactTitle": "Measuring Impact",
+        "impact": "→ Adoption: 70% of admins created at least one library, with 40% adding multiple data sources.\n\n→ Efficiency: Average time to configure a library reduced by 35%, thanks to single-retriever setup.\n\n→ AI Reliability: 50% decrease in hallucinations; responses now 90% grounded in relevant data.\n\n→ Customer Value: 25% reduction in support tickets related to agent responses; positive admin satisfaction ratings at 4.7/5.",
+        "learningsLabel": "Reflection",
+        "learningsTitle": "",
+        "learnings": "",
+        "processSteps": [
+          {
+            "title": "Ideation & Sketching",
+            "description": "Created 8+ sketches exploring different approaches to adding data to AI Agent. Collaborated with engineering early to understand technical constraints."
+          },
+          {
+            "title": "Low-Fi Prototyping",
+            "description": "Built interactive wireframes in Figma and tested with 4 users. Key learning: users wanted to transparency into data pipelines, not just abstracted flows."
+          },
+          {
+            "title": "High-Fi Design & Testing",
+            "description": "Designed polished mockups with micro-interactions and tested with 5 users. Iterated on confidence indicators and error handling based on feedback."
+          },
+          {
+            "title": "Beta Launch & Iteration",
+            "description": "Launched to 20 enterprise customers and collected feedback weekly. Made 3 major design updates based on real usage patterns."
+          }
+        ]
       },
       "heroImage": "assets/data lib hero.png",
-      "heroVideo": "",
-      "coverVideo": "assets/adl cover video.mp4",
+      "heroVideo": "assets/data lib vid.mp4",
+      "coverVideo": "assets/data lib vid.mp4",
       "coverImage": "",
       "externalUrl": "",
       "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
@@ -278,7 +339,30 @@
         "goalsHeader": "User Goals",
         "successMetricsHeader": "Success Metrics",
         "solutionHeader": "Design decisions",
-        "problemImage": ""
+        "problemImage": "",
+        "role": "",
+        "timeline": "",
+        "teamDescription": "",
+        "responsibilities": "",
+        "tools": "",
+        "overviewLabel": "Overview",
+        "overviewTitle": "",
+        "challengeLabel": "The Challenge",
+        "challengeTitle": "",
+        "discoveryLabel": "Discovery",
+        "discoveryTitle": "",
+        "discovery": "",
+        "processLabel": "Design Process",
+        "processTitle": "",
+        "process": "",
+        "solutionLabel": "The Solution",
+        "solutionTitle": "",
+        "impactLabel": "Results",
+        "impactTitle": "",
+        "impact": "",
+        "learningsLabel": "Reflection",
+        "learningsTitle": "",
+        "learnings": ""
       },
       "heroImage": "",
       "coverVideo": "",
@@ -336,7 +420,30 @@
         "goalsHeader": "Goals",
         "successMetricsHeader": "Success Metrics",
         "solutionHeader": "Final Designs",
-        "problemImage": ""
+        "problemImage": "",
+        "role": "",
+        "timeline": "",
+        "teamDescription": "",
+        "responsibilities": "",
+        "tools": "",
+        "overviewLabel": "Overview",
+        "overviewTitle": "",
+        "challengeLabel": "The Challenge",
+        "challengeTitle": "",
+        "discoveryLabel": "Discovery",
+        "discoveryTitle": "",
+        "discovery": "",
+        "processLabel": "Design Process",
+        "processTitle": "",
+        "process": "",
+        "solutionLabel": "The Solution",
+        "solutionTitle": "",
+        "impactLabel": "Results",
+        "impactTitle": "",
+        "impact": "",
+        "learningsLabel": "Reflection",
+        "learningsTitle": "",
+        "learnings": ""
       },
       "heroImage": "",
       "heroVideo": "",
@@ -385,7 +492,30 @@
           "research": [],
           "engineering": [],
           "content": []
-        }
+        },
+        "role": "",
+        "timeline": "",
+        "teamDescription": "",
+        "responsibilities": "",
+        "tools": "",
+        "overviewLabel": "Overview",
+        "overviewTitle": "",
+        "challengeLabel": "The Challenge",
+        "challengeTitle": "",
+        "discoveryLabel": "Discovery",
+        "discoveryTitle": "",
+        "discovery": "",
+        "processLabel": "Design Process",
+        "processTitle": "",
+        "process": "",
+        "solutionLabel": "The Solution",
+        "solutionTitle": "",
+        "impactLabel": "Results",
+        "impactTitle": "",
+        "impact": "",
+        "learningsLabel": "Reflection",
+        "learningsTitle": "",
+        "learnings": ""
       },
       "heroImage": "",
       "heroVideo": "",
@@ -442,7 +572,30 @@
         "goalsHeader": "Goals",
         "successMetricsHeader": "Success Metrics",
         "solutionHeader": "Final Designs",
-        "problemImage": ""
+        "problemImage": "",
+        "role": "",
+        "timeline": "",
+        "teamDescription": "",
+        "responsibilities": "",
+        "tools": "",
+        "overviewLabel": "Overview",
+        "overviewTitle": "",
+        "challengeLabel": "The Challenge",
+        "challengeTitle": "",
+        "discoveryLabel": "Discovery",
+        "discoveryTitle": "",
+        "discovery": "",
+        "processLabel": "Design Process",
+        "processTitle": "",
+        "process": "",
+        "solutionLabel": "The Solution",
+        "solutionTitle": "",
+        "impactLabel": "Results",
+        "impactTitle": "",
+        "impact": "",
+        "learningsLabel": "Reflection",
+        "learningsTitle": "",
+        "learnings": ""
       },
       "heroImage": "",
       "heroVideo": "",
@@ -508,7 +661,30 @@
         "goalsHeader": "Goals",
         "successMetricsHeader": "Success Metrics",
         "solutionHeader": "Final Designs",
-        "problemImage": ""
+        "problemImage": "",
+        "role": "",
+        "timeline": "",
+        "teamDescription": "",
+        "responsibilities": "",
+        "tools": "",
+        "overviewLabel": "Overview",
+        "overviewTitle": "",
+        "challengeLabel": "The Challenge",
+        "challengeTitle": "",
+        "discoveryLabel": "Discovery",
+        "discoveryTitle": "",
+        "discovery": "",
+        "processLabel": "Design Process",
+        "processTitle": "",
+        "process": "",
+        "solutionLabel": "The Solution",
+        "solutionTitle": "",
+        "impactLabel": "Results",
+        "impactTitle": "",
+        "impact": "",
+        "learningsLabel": "Reflection",
+        "learningsTitle": "",
+        "learnings": ""
       },
       "heroImage": "assets/asset library cover.png",
       "heroVideo": "",

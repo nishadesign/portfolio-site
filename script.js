@@ -94,14 +94,6 @@ function renderProjects(projects) {
     
     projectsSection.innerHTML = projects.map((project, index) => `
         <article class="project-card" data-project-id="${project.id}" data-filter-tag="${project.filterTag || ''}">
-            <div class="project-content">
-                <a href="${project.externalUrl || `project.html?id=${project.id}`}" class="project-header-link"${project.externalUrl ? ' target="_blank" rel="noopener noreferrer"' : ''}>
-                    <h2 class="project-title">${project.title}<span class="title-arrow">↗</span></h2>
-                </a>
-                <p class="project-meta">${project.company} · ${project.date}</p>
-                <p class="project-description">${project.description}</p>
-                ${project.releaseNotes ? `<a href="${project.releaseNotes}" class="release-notes-link" target="_blank" rel="noopener">Release Notes ↗</a>` : ''}
-            </div>
             <a href="${project.externalUrl || `project.html?id=${project.id}`}" class="project-cover-link"${project.externalUrl ? ' target="_blank" rel="noopener noreferrer"' : ''}>
             ${project.coverVideos && project.coverVideos.length > 0 ? `
                 <div class="project-cover-grid">
@@ -134,6 +126,18 @@ function renderProjects(projects) {
                 </div>
             `}
             </a>
+            <div class="project-content">
+                <a href="${project.externalUrl || `project.html?id=${project.id}`}" class="project-header-link"${project.externalUrl ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+                    <h2 class="project-title">${project.title}<span class="title-arrow">↗</span></h2>
+                </a>
+                <p class="project-meta">
+                    ${project.company ? `<span>${project.company}</span>` : ''}
+                    ${project.date ? `<span>${project.date}</span>` : ''}
+                    ${project.filterTag ? `<span>${project.filterTag}</span>` : ''}
+                </p>
+                <p class="project-description">${project.description}</p>
+                ${project.releaseNotes ? `<a href="${project.releaseNotes}" class="release-notes-link" target="_blank" rel="noopener">Release Notes</a>` : `<a href="${project.externalUrl || `project.html?id=${project.id}`}" class="release-notes-link"${project.externalUrl ? ' target="_blank" rel="noopener noreferrer"' : ''}>View Case Study</a>`}
+            </div>
         </article>
     `).join('');
 }
@@ -143,17 +147,48 @@ function renderFooter(profile) {
     const footer = document.querySelector('.footer');
     if (!footer) return;
     
-    // Build footer links dynamically (only show links that exist)
-    const footerLinks = [];
-    if (profile.social.linkedin) footerLinks.push(`<a href="${profile.social.linkedin}" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>`);
-    if (profile.resume) footerLinks.push(`<a href="${profile.resume}" class="footer-link" target="_blank" rel="noopener">Resume</a>`);
-    if (profile.social.substack) footerLinks.push(`<a href="${profile.social.substack}" class="footer-link" target="_blank" rel="noopener">Substack</a>`);
+    // Build footer buttons
+    const buttons = [];
+    
+    // LinkedIn button
+    if (profile.social?.linkedin) {
+        buttons.push(`
+            <a href="${profile.social.linkedin}" class="footer-button" target="_blank" rel="noopener">
+                <span class="footer-button-icon">💼</span>
+                <span>LinkedIn</span>
+            </a>
+        `);
+    }
+    
+    // Resume button
+    if (profile.resume) {
+        buttons.push(`
+            <a href="${profile.resume}" class="footer-button" target="_blank" rel="noopener">
+                <span class="footer-button-icon">📄</span>
+                <span>Resume</span>
+            </a>
+        `);
+    }
+    
+    // Substack button
+    if (profile.social?.substack) {
+        buttons.push(`
+            <a href="${profile.social.substack}" class="footer-button" target="_blank" rel="noopener">
+                <span class="footer-button-icon">✍️</span>
+                <span>Substack</span>
+            </a>
+        `);
+    }
+    
+    const currentYear = new Date().getFullYear();
     
     footer.innerHTML = `
-        <a href="mailto:${profile.email}" class="footer-email">${profile.email}</a>
-        <div class="footer-links">
-            ${footerLinks.join('')}
+        <h2 class="footer-heading">Let's Work Together</h2>
+        <p class="footer-subtext">I'm always interested in hearing about new opportunities and collaborations.</p>
+        <div class="footer-buttons">
+            ${buttons.join('')}
         </div>
+        <p class="footer-copyright">© ${currentYear} Nisha Rastogi. Designed & built with care.</p>
     `;
 }
 
