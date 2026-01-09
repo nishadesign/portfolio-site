@@ -476,11 +476,15 @@ a {
 
 .work-hero-description {
     font-family: var(--font-body);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-base);
+    font-weight: 300;
     color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
+    line-height: 1.8;
     margin: 0;
+}
+
+.work-hero-description + .work-hero-description {
+    margin-top: 0;
 }
 
 /* ===== Filter Pills ===== */
