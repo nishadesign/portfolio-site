@@ -39,11 +39,12 @@
 
     <!-- Testimonials Section (Full Width) - After My Super Powers -->
     <section class="testimonials-section" id="testimonials-section">
-        <div class="testimonials-header">
-            <h2 class="values-header">What people say about me</h2>
-        </div>
-        <div class="testimonials-track-wrapper">
-            <div class="testimonials-track" id="testimonials-track">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2 class="section-title">What people say about me</h2>
+                <p class="section-subtitle">Hear from colleagues and collaborators I've worked with</p>
+            </div>
+            <div class="testimonials-grid" id="testimonials-grid">
                 <!-- Loaded dynamically -->
             </div>
         </div>
@@ -223,17 +224,15 @@
                     `;
                 }
                 
-                // Render Testimonials - Auto-scrolling track
-                const testimonialsTrack = document.getElementById('testimonials-track');
-                if (testimonialsTrack && aboutPage.testimonials && aboutPage.testimonials.length > 0) {
+                // Render Testimonials - Grid layout
+                const testimonialsGrid = document.getElementById('testimonials-grid');
+                if (testimonialsGrid && aboutPage.testimonials && aboutPage.testimonials.length > 0) {
                     const testimonials = aboutPage.testimonials;
-                    
-                    // Duplicate testimonials for seamless loop
-                    const allTestimonials = [...testimonials, ...testimonials];
-                    
-                    // Render cards
-                    testimonialsTrack.innerHTML = allTestimonials.map((t) => `
+
+                    // Render cards in grid
+                    testimonialsGrid.innerHTML = testimonials.map((t) => `
                         <div class="testimonial-card">
+                            <div class="testimonial-quote-icon">"</div>
                             <p class="testimonial-quote">${t.recommendation}</p>
                             <div class="testimonial-author">
                                 ${t.image ? `<div class="testimonial-avatar"><img src="${t.image}" alt="${t.name}"></div>` : '<div class="testimonial-avatar-placeholder"></div>'}
