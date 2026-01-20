@@ -26,11 +26,8 @@ async function initProjectPage() {
         // Update page title
         document.title = `${project.title} · ${data.profile.name}`;
         
-        // Get next project for navigation
-        const nextProject = data.projects[projectIndex + 1] || data.projects[0];
-        
         // Render project content
-        renderProject(project, nextProject);
+        renderProject(project);
         
         // Update footer with profile data
         updateFooter(data.profile);
@@ -42,7 +39,7 @@ async function initProjectPage() {
 }
 
 // Render the full project page
-function renderProject(project, nextProject) {
+function renderProject(project) {
     const container = document.getElementById('project-content');
     const details = project.details;
     
@@ -215,29 +212,13 @@ function renderProject(project, nextProject) {
             </section>
         `).join('') : ''}
 
-        <!-- Next Project -->
-        ${nextProject ? `
-        <section class="next-project">
-            <div class="next-project-label">Next Project</div>
-            <a href="project.html?id=${nextProject.id}" class="next-project-link">
-                <div class="next-project-content">
-                    <h3>${nextProject.title}</h3>
-                    <p>${nextProject.description}</p>
-                    <span class="next-project-arrow">View Project →</span>
-                </div>
-                <div class="next-project-image">
-                    ${nextProject.coverImage 
-                        ? `<img src="${nextProject.coverImage}" alt="${nextProject.title}">`
-                        : nextProject.coverVideo
-                            ? `<video autoplay loop muted playsinline>
-                                <source src="${encodeURI(nextProject.coverVideo)}" type="video/mp4">
-                               </video>`
-                            : `<span class="placeholder-text">Next Project</span>`
-                    }
-                </div>
+        <!-- Back to All Projects -->
+        <section class="back-to-projects">
+            <a href="work.html" class="back-button">
+                <span class="back-arrow">←</span>
+                <span>Back to all case studies</span>
             </a>
         </section>
-        ` : ''}
     `;
 }
 

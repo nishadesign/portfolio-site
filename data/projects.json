@@ -120,7 +120,7 @@
   },
   "projects": [
     {
-      "id": "project-one",
+      "id": "making-agents-smarter-with-data",
       "title": "Making Agents Smarter With Data",
       "company": "Salesforce",
       "date": "October 2025",
@@ -249,7 +249,7 @@
       "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
     },
     {
-      "id": "project-two",
+      "id": "agent-builder-platform",
       "title": "Agent Builder Platform",
       "company": "Salesforce",
       "date": "October 2024",
@@ -371,7 +371,7 @@
       "releaseNotes": "https://www.salesforce.com/agentforce/agent-builder/"
     },
     {
-      "id": "project-three",
+      "id": "wish-fashion",
       "title": "Wish Fashion",
       "company": "Wish",
       "date": "August 2022",
@@ -453,7 +453,7 @@
       "releaseNotes": ""
     },
     {
-      "id": "project-1767386671661",
+      "id": "my-portfolio",
       "title": "My Portfolio",
       "company": "",
       "date": "January 2026",
@@ -525,7 +525,7 @@
       "releaseNotes": ""
     },
     {
-      "id": "project-four",
+      "id": "roast-your-design",
       "title": "Roast your design",
       "company": "Personal Project",
       "date": "August 2025",
@@ -605,7 +605,7 @@
       "releaseNotes": ""
     },
     {
-      "id": "project-five",
+      "id": "agent-assets",
       "title": "Agent assets",
       "company": "Salesforce",
       "date": "December 2025",

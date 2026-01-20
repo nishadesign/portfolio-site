@@ -295,7 +295,6 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -306,7 +305,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 300;
-    overflow-x: hidden;
 }
 
 * {
@@ -449,6 +447,7 @@ a {
     margin: 0 auto;
     padding: calc(80px + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
     position: relative;
+    overflow: visible;
 }
 
 /* ===== Work Hero Section ===== */
@@ -1028,7 +1027,7 @@ a {
 }
 
 /* Crop Data Library videos to hide black bars */
-[href*="project-one"] video,
+[href*="making-agents-smarter-with-data"] video,
 .project-hero-image video[src*="data lib"],
 .project-hero-image video[src*="data%20lib"],
 .section-media-container video[src*="data lib"],
@@ -1054,12 +1053,37 @@ a {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 6rem;
+    align-items: flex-start;
 }
 
 .project-sidebar {
+    position: -webkit-sticky;
     position: sticky;
-    top: calc(60px + 2rem);
+    top: 120px;
     height: fit-content;
+    align-self: flex-start;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-light) transparent;
+    z-index: 10;
+}
+
+.project-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-sidebar::-webkit-scrollbar-thumb {
+    background: var(--color-border-light);
+    border-radius: 3px;
+}
+
+.project-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-medium);
 }
 
 .detail-group {
@@ -1218,87 +1242,45 @@ a {
     font-weight: 300;
 }
 
-/* Next Project */
-.next-project {
-    padding: 6rem 3rem;
+/* Back to Projects Button */
+.back-to-projects {
+    padding: 4rem 3rem 6rem;
     background: var(--color-bg);
-    border-top: none;
-}
-
-.next-project-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin-bottom: 1rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.next-project-link {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.4s ease;
     max-width: 1400px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.next-project-link:hover {
-    transform: translateY(-8px);
-}
-
-.next-project-content h3 {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-.next-project-content p {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
-.next-project-arrow {
+.back-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    color: var(--color-text-primary);
-    font-weight: 300;
-}
-
-.next-project-image {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: var(--color-surface);
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: transparent;
     border: 1px solid var(--color-border-light);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.next-project-image video,
-.next-project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.back-button:hover {
+    background: var(--color-text-primary);
+    color: var(--color-bg);
+    border-color: var(--color-text-primary);
+    transform: translateX(-4px);
 }
 
-.next-project-link:hover .next-project-image {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+.back-arrow {
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-button:hover .back-arrow {
+    transform: translateX(-4px);
 }
 
 /* Legacy styles for old structure */
@@ -1934,72 +1916,7 @@ a {
 }
 
 /* Next Project */
-.next-project {
-    margin-top: var(--spacing-xl);
-}
-
-.next-project-link {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: var(--spacing-lg);
-    align-items: center;
-    padding: var(--spacing-lg);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
-}
-
-.next-project-link:hover {
-    border-color: var(--color-text-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.next-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-tertiary);
-    display: block;
-    margin-bottom: 4px;
-}
-
-.next-title {
-    font-family: var(--font-sans);
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: var(--color-text-primary);
-    margin-bottom: 4px;
-}
-
-.next-description {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    line-height: 1.5;
-}
-
-.next-image-placeholder {
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #e8f0e8 0%, #f0f4f8 100%);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-}
-
-.next-project-image img,
-.next-project-image video {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius-md);
-    display: block;
-    object-fit: cover;
-    aspect-ratio: 4/3;
-}
+/* Legacy next-project styles removed - replaced with back button */
 
 /* ===== About Page Hero Section ===== */
 .finding-myself-section {
@@ -3365,7 +3282,7 @@ a {
     transform: translateY(0);
 }
 
-.next-project {
+.back-to-projects {
     opacity: 1;
     transform: translateY(0);
 }
@@ -3467,13 +3384,8 @@ a {
         min-height: 300px;
     }
 
-    .next-project {
-        padding: 4rem 1.5rem;
-    }
-
-    .next-project-link {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .back-to-projects {
+        padding: 3rem 1.5rem 4rem;
     }
 }
 
@@ -3681,12 +3593,9 @@ a {
         grid-template-columns: 1fr;
     }
     
-    .next-project-link {
-        grid-template-columns: 1fr;
-    }
-    
-    .next-project-image {
-        order: -1;
+    .back-button {
+        font-size: 0.875rem;
+        padding: 0.875rem 1.25rem;
     }
     
     .highlight-quote p {
