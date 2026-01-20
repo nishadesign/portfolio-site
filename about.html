@@ -437,21 +437,25 @@
             
             if (!bentoGrid || !bentoItems.length) return;
             
-            // Pause animations on grid hover
+            // Skip hover interactions on mobile/touch devices
+            const isMobile = window.innerWidth <= 900 || 'ontouchstart' in window;
+            if (isMobile) return;
+            
+            // Pause animations on grid hover (desktop only)
             bentoGrid.addEventListener('mouseenter', () => {
                 bentoItems.forEach(item => {
                     item.style.animationPlayState = 'paused';
                 });
             });
             
-            // Resume animations when leaving grid
+            // Resume animations when leaving grid (desktop only)
             bentoGrid.addEventListener('mouseleave', () => {
                 bentoItems.forEach(item => {
                     item.style.animationPlayState = 'running';
                 });
             });
             
-            // Show overlay on individual item hover
+            // Show overlay on individual item hover (desktop only)
             bentoItems.forEach(item => {
                 const overlay = item.querySelector('.bento-overlay');
                 if (!overlay) return;
