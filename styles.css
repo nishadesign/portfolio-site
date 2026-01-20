@@ -295,6 +295,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -305,6 +306,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 300;
+    overflow-x: hidden;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -450,6 +457,7 @@ a {
     align-items: center;
     gap: var(--space-xl);
     margin-bottom: var(--space-xl);
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .work-hero-image {
@@ -493,6 +501,8 @@ a {
     gap: 12px;
     margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
 }
 
 .filter-pill {
@@ -2475,20 +2485,19 @@ a {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     color: var(--color-text-primary);
-    margin-bottom: 48px;
+    margin-bottom: var(--space-xl);
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
 .values-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
 }
 
 .value-card {
-    padding: var(--space-xl) 0;
-    border-bottom: 1px solid var(--color-border-light);
+    padding: 0;
     background-color: transparent;
     color: var(--color-text-primary);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2496,12 +2505,9 @@ a {
     flex-direction: column;
 }
 
-.value-card:last-child {
-    border-bottom: none;
-}
-
 .value-card:hover {
     opacity: 0.8;
+    transform: translateY(-4px);
 }
 
 .value-icon {
@@ -2686,6 +2692,16 @@ a {
         transform: rotate(90deg);
         margin: 8px 0;
     }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .values-header {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-lg);
+    }
 }
 
 /* ===== Spiral Gallery ===== */
@@ -2823,7 +2839,7 @@ a {
 .testimonials-track-wrapper {
     overflow: visible;
     width: 100%;
-    padding: 20px 0 60px;
+    padding: 30px 0 80px;
     position: relative;
 }
 
@@ -2852,12 +2868,46 @@ a {
 .testimonials-track {
     display: flex;
     gap: 24px;
-    animation: scroll-testimonials 45s linear infinite;
+    animation: scroll-testimonials 60s linear infinite;
     width: max-content;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 10px 0 30px;
 }
 
 .testimonials-track:hover {
     animation-play-state: paused;
+}
+
+/* Pagination dots */
+.testimonials-pagination {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    padding: 0 var(--space-md);
+}
+
+.pagination-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border-medium);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.pagination-dot:hover {
+    background: var(--color-text-secondary);
+    transform: scale(1.2);
+}
+
+.pagination-dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--color-text-primary);
 }
 
 @keyframes scroll-testimonials {
@@ -2865,7 +2915,7 @@ a {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-50% - 12px));
+        transform: translateX(calc(-33.333% - 8px));
     }
 }
 
@@ -2879,6 +2929,7 @@ a {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--color-border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2941,14 +2992,70 @@ a {
 }
 
 /* Mobile responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .testimonials-section {
+        padding: var(--spacing-lg) 0 var(--space-3xl);
+        overflow: visible;
+    }
+    
+    .testimonials-header {
+        padding: 0 var(--spacing-md);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .testimonials-track-wrapper {
+        overflow-x: auto;
+        overflow-y: visible;
+        padding: 30px 0 50px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        cursor: grab;
+    }
+    
+    .testimonials-track-wrapper:active {
+        cursor: grabbing;
+    }
+    
+    .testimonials-track-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .testimonials-track-wrapper::before,
+    .testimonials-track-wrapper::after {
+        display: none;
+    }
+    
+    .testimonials-track {
+        animation: none;
+        gap: 16px;
+        padding: 10px var(--space-md) 30px;
+        display: flex;
+        width: auto;
+    }
+    
     .testimonial-card {
-        width: 300px;
+        flex: 0 0 calc(100vw - 64px);
+        width: calc(100vw - 64px);
+        max-width: 380px;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
         padding: var(--space-lg) var(--space-md);
     }
     
+    .testimonial-card:hover {
+        transform: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    
     .testimonial-card::before {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+    
+    .testimonials-pagination {
+        display: flex !important;
     }
 }
 
@@ -3039,7 +3146,7 @@ a {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(15px);
     }
     to {
         opacity: 1;
@@ -3061,9 +3168,10 @@ a {
 /* Scroll-triggered animations */
 .scroll-animate {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .scroll-animate.in-view {
@@ -3079,9 +3187,10 @@ a {
 /* Scale animation variant */
 .scroll-animate-scale {
     opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.95);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .scroll-animate-scale.in-view {
@@ -3092,9 +3201,10 @@ a {
 /* Slide from left */
 .scroll-animate-left {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .scroll-animate-left.in-view {
@@ -3105,9 +3215,10 @@ a {
 /* Slide from right */
 .scroll-animate-right {
     opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .scroll-animate-right.in-view {
@@ -3122,10 +3233,11 @@ a {
 /* Project cards use scroll-animate class instead */
 .project-card.scroll-animate {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.2s ease;
+    will-change: opacity, transform;
 }
 
 .project-card.scroll-animate.in-view {
@@ -3368,7 +3480,8 @@ a {
     }
     
     .values-grid {
-        gap: 0;
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
     
     .values-header {
@@ -3377,7 +3490,7 @@ a {
     }
     
     .value-card {
-        padding: var(--space-lg) 0;
+        padding: 0;
     }
     
     .value-icon {

@@ -51,6 +51,9 @@
                 <!-- Loaded dynamically -->
             </div>
         </div>
+        <div class="testimonials-pagination" id="testimonials-pagination">
+            <!-- Pagination dots loaded dynamically -->
+        </div>
     </section>
 
     <!-- How I Got Into UX Section -->
@@ -220,27 +223,124 @@
                     testimonialsHeader.textContent = aboutPage.testimonialsTitle || 'What people say about me';
                 }
                 
-                // Render Testimonials - Auto-scrolling track
+                // Render Testimonials - Auto-scrolling track on desktop, swipe on mobile
                 const testimonialsTrack = document.getElementById('testimonials-track');
+                const testimonialsPagination = document.getElementById('testimonials-pagination');
+                
                 if (testimonialsTrack && aboutPage.testimonials && aboutPage.testimonials.length > 0) {
                     const testimonials = aboutPage.testimonials;
                     
-                    // Duplicate testimonials for seamless loop
-                    const allTestimonials = [...testimonials, ...testimonials];
-                    
-                    // Render cards
-                    testimonialsTrack.innerHTML = allTestimonials.map((t) => `
-                        <div class="testimonial-card">
-                            <p class="testimonial-quote">${t.recommendation}</p>
-                            <div class="testimonial-author">
-                                ${t.image ? `<div class="testimonial-avatar"><img src="${t.image}" alt="${t.name}"></div>` : '<div class="testimonial-avatar-placeholder"></div>'}
-                                <div class="testimonial-info">
-                                    <h4>${t.name}</h4>
-                                    <p>${t.company}</p>
+                    function renderTestimonials() {
+                        const isMobile = window.innerWidth <= 900;
+                        
+                        // On desktop: Duplicate testimonials 3 times for seamless loop
+                        // On mobile: Use original testimonials for pagination
+                        const allTestimonials = isMobile ? testimonials : [...testimonials, ...testimonials, ...testimonials];
+                        
+                        // Render cards
+                        testimonialsTrack.innerHTML = allTestimonials.map((t) => `
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">${t.recommendation}</p>
+                                <div class="testimonial-author">
+                                    ${t.image ? `<div class="testimonial-avatar"><img src="${t.image}" alt="${t.name}"></div>` : '<div class="testimonial-avatar-placeholder"></div>'}
+                                    <div class="testimonial-info">
+                                        <h4>${t.name}</h4>
+                                        <p>${t.company}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `).join('');
+                        `).join('');
+                        
+                        // Render and initialize pagination on mobile
+                        if (isMobile && testimonialsPagination) {
+                            testimonialsPagination.innerHTML = testimonials.map((_, i) => 
+                                `<div class="pagination-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`
+                            ).join('');
+                            
+                            // Small delay to ensure DOM is ready
+                            setTimeout(() => {
+                                initTestimonialSwipe(testimonialsTrack, testimonials.length);
+                            }, 100);
+                        } else if (testimonialsPagination) {
+                            testimonialsPagination.innerHTML = '';
+                        }
+                    }
+                    
+                    // Initial render
+                    renderTestimonials();
+                    
+                    // Re-render on window resize
+                    let resizeTimeout;
+                    window.addEventListener('resize', () => {
+                        clearTimeout(resizeTimeout);
+                        resizeTimeout = setTimeout(renderTestimonials, 300);
+                    });
+                }
+                
+                function initTestimonialSwipe(track, count) {
+                    if (!track) return;
+                    
+                    const wrapper = track.parentElement;
+                    if (!wrapper) return;
+                    
+                    let currentIndex = 0;
+                    const cards = track.querySelectorAll('.testimonial-card');
+                    const dots = document.querySelectorAll('.pagination-dot');
+                    
+                    console.log('Initializing testimonial swipe:', { count, cardsCount: cards.length, dotsCount: dots.length });
+                    
+                    if (cards.length === 0 || dots.length === 0) {
+                        console.error('Cards or dots not found');
+                        return;
+                    }
+                    
+                    // Update active dot
+                    function updateActiveDot(index) {
+                        dots.forEach((dot, i) => {
+                            dot.classList.toggle('active', i === index);
+                        });
+                    }
+                    
+                    // Handle scroll to update pagination
+                    let scrollTimeout;
+                    wrapper.addEventListener('scroll', () => {
+                        clearTimeout(scrollTimeout);
+                        scrollTimeout = setTimeout(() => {
+                            const card = cards[0];
+                            if (!card) return;
+                            
+                            const cardWidth = card.offsetWidth;
+                            const gap = 16;
+                            const scrollLeft = wrapper.scrollLeft;
+                            const newIndex = Math.round(scrollLeft / (cardWidth + gap));
+                            
+                            if (newIndex !== currentIndex && newIndex >= 0 && newIndex < count) {
+                                currentIndex = newIndex;
+                                updateActiveDot(currentIndex);
+                            }
+                        }, 100);
+                    }, { passive: true });
+                    
+                    // Handle dot clicks
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            const card = cards[0];
+                            if (!card) return;
+                            
+                            currentIndex = index;
+                            const cardWidth = card.offsetWidth;
+                            const gap = 16;
+                            const scrollLeft = index * (cardWidth + gap);
+                            
+                            console.log('Dot clicked:', { index, scrollLeft, cardWidth });
+                            
+                            wrapper.scrollTo({
+                                left: scrollLeft,
+                                behavior: 'smooth'
+                            });
+                            updateActiveDot(index);
+                        });
+                    });
                 }
                 
                 // Render Footer
