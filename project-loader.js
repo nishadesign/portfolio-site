@@ -377,21 +377,44 @@ function updateMetaTags(project, profile) {
             "@type": "Person",
             "name": profile.name,
             "url": baseUrl,
+            "logo": `${baseUrl}/assets/Nisha-Rastogi-logo.png`,
             "sameAs": [
                 profile.social?.linkedin,
                 profile.social?.substack
             ].filter(Boolean)
         },
         "publisher": {
-            "@type": "Person",
+            "@type": "Organization",
             "name": profile.name,
-            "image": `${baseUrl}/assets/profile image 1.jpg`
+            "logo": {
+                "@type": "ImageObject",
+                "url": `${baseUrl}/assets/Nisha-Rastogi-logo.png`
+            }
         },
         "datePublished": project.date || new Date().toISOString(),
         "dateModified": project.date || new Date().toISOString()
     };
     
     structuredData.textContent = JSON.stringify(articleData);
+    
+    // Add WebSite schema with logo for better search result display
+    let websiteSchema = document.querySelector('script[type="application/ld+json"][data-schema="website"]');
+    if (!websiteSchema) {
+        websiteSchema = document.createElement('script');
+        websiteSchema.setAttribute('type', 'application/ld+json');
+        websiteSchema.setAttribute('data-schema', 'website');
+        document.head.appendChild(websiteSchema);
+    }
+    
+    const websiteData = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": profile.name,
+        "url": baseUrl,
+        "logo": `${baseUrl}/assets/Nisha-Rastogi-logo.png`
+    };
+    
+    websiteSchema.textContent = JSON.stringify(websiteData);
 }
 
 // Show error state
