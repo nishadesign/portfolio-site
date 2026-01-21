@@ -13,25 +13,25 @@ async function initProjectPage() {
     try {
         const response = await fetch(DATA_PATH);
         const data = await response.json();
-        
+
         const projectId = getProjectId();
         const project = data.projects.find(p => p.id === projectId);
         const projectIndex = data.projects.findIndex(p => p.id === projectId);
-        
+
         if (!project) {
             showError('Project not found');
             return;
         }
-        
+
         // Update page title
         document.title = `${project.title} · ${data.profile.name}`;
-        
-        // Render project content
-        renderProject(project);
-        
+
+        // Render project content with navigation
+        renderProject(project, projectIndex, data.projects);
+
         // Update footer with profile data
         updateFooter(data.profile);
-        
+
     } catch (error) {
         console.error('Error loading project:', error);
         showError('Error loading project');
@@ -39,12 +39,16 @@ async function initProjectPage() {
 }
 
 // Render the full project page
-function renderProject(project) {
+function renderProject(project, projectIndex, allProjects) {
     const container = document.getElementById('project-content');
     const details = project.details;
-    
+
     // Helper to format multi-line content
     const formatContent = (text) => text ? text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') : '';
+
+    // Calculate previous and next projects
+    const prevProject = projectIndex > 0 ? allProjects[projectIndex - 1] : null;
+    const nextProject = projectIndex < allProjects.length - 1 ? allProjects[projectIndex + 1] : null;
     
     container.innerHTML = `
         <!-- Project Hero -->
@@ -211,6 +215,35 @@ function renderProject(project) {
                 ` : ''}
             </section>
         `).join('') : ''}
+
+        <!-- Project Navigation -->
+        ${prevProject || nextProject ? `
+        <section class="project-navigation">
+            <div class="project-nav-container">
+                ${prevProject ? `
+                <a href="project.html?id=${prevProject.id}" class="project-nav-card project-nav-prev">
+                    <div class="nav-label">
+                        <span class="nav-arrow">←</span>
+                        <span>Previous Project</span>
+                    </div>
+                    <h3 class="nav-title">${prevProject.title}</h3>
+                    <p class="nav-meta">${prevProject.company}${prevProject.date ? ` · ${prevProject.date}` : ''}</p>
+                </a>
+                ` : '<div class="project-nav-spacer"></div>'}
+
+                ${nextProject ? `
+                <a href="project.html?id=${nextProject.id}" class="project-nav-card project-nav-next">
+                    <div class="nav-label">
+                        <span>Next Project</span>
+                        <span class="nav-arrow">→</span>
+                    </div>
+                    <h3 class="nav-title">${nextProject.title}</h3>
+                    <p class="nav-meta">${nextProject.company}${nextProject.date ? ` · ${nextProject.date}` : ''}</p>
+                </a>
+                ` : '<div class="project-nav-spacer"></div>'}
+            </div>
+        </section>
+        ` : ''}
 
         <!-- Back to All Projects -->
         <section class="back-to-projects">
