@@ -23,8 +23,8 @@ async function initProjectPage() {
             return;
         }
         
-        // Update page title
-        document.title = `${project.title} · ${data.profile.name}`;
+        // Update page title and meta tags
+        updateMetaTags(project, data.profile);
         
         // Render project content
         renderProject(project);
@@ -270,6 +270,95 @@ function updateFooter(profile) {
         </div>
         <p class="footer-copyright">© ${currentYear} Nisha Rastogi. Designed & built with care.</p>
     `;
+}
+
+// Update meta tags for SEO
+function updateMetaTags(project, profile) {
+    const baseUrl = 'https://nisha-rastogi.com';
+    const projectUrl = `${baseUrl}/project.html?id=${project.id}`;
+    const description = project.description || `Case study: ${project.title} by ${profile.name} - Product Designer specializing in AI & Platform UX.`;
+    const imageUrl = project.coverImage ? `${baseUrl}/${project.coverImage}` : `${baseUrl}/assets/profile image 1.jpg`;
+    
+    // Update title
+    document.title = `${project.title} · ${profile.name}`;
+    
+    // Update or create meta tags
+    const updateMeta = (name, content, isProperty = false) => {
+        const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+        let meta = document.querySelector(selector);
+        if (!meta) {
+            meta = document.createElement('meta');
+            if (isProperty) {
+                meta.setAttribute('property', name);
+            } else {
+                meta.setAttribute('name', name);
+            }
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', content);
+    };
+    
+    // Primary meta tags
+    updateMeta('title', `${project.title} · ${profile.name}`);
+    updateMeta('description', description);
+    updateMeta('keywords', `${project.title}, ${profile.name}, Product Designer, UX Designer, Case Study, ${project.category || ''}`);
+    
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', projectUrl);
+    
+    // Open Graph tags
+    updateMeta('og:type', 'article', true);
+    updateMeta('og:url', projectUrl, true);
+    updateMeta('og:title', `${project.title} · ${profile.name}`, true);
+    updateMeta('og:description', description, true);
+    updateMeta('og:image', imageUrl, true);
+    
+    // Twitter tags
+    updateMeta('twitter:card', 'summary_large_image', true);
+    updateMeta('twitter:url', projectUrl, true);
+    updateMeta('twitter:title', `${project.title} · ${profile.name}`, true);
+    updateMeta('twitter:description', description, true);
+    updateMeta('twitter:image', imageUrl, true);
+    
+    // Add structured data for Article
+    let structuredData = document.querySelector('script[type="application/ld+json"]');
+    if (!structuredData) {
+        structuredData = document.createElement('script');
+        structuredData.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(structuredData);
+    }
+    
+    const articleData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": project.title,
+        "description": description,
+        "image": imageUrl,
+        "author": {
+            "@type": "Person",
+            "name": profile.name,
+            "url": baseUrl,
+            "sameAs": [
+                profile.social?.linkedin,
+                profile.social?.substack
+            ].filter(Boolean)
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": profile.name,
+            "image": `${baseUrl}/assets/profile image 1.jpg`
+        },
+        "datePublished": project.date || new Date().toISOString(),
+        "dateModified": project.date || new Date().toISOString()
+    };
+    
+    structuredData.textContent = JSON.stringify(articleData);
 }
 
 // Show error state
