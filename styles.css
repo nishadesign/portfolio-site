@@ -4024,3 +4024,256 @@ a {
         margin: var(--space-lg) 0;
     }
 }
+
+
+/* ===============================================
+   DYNAMIC INTERACTIONS STYLES
+   Features: Custom cursor, Text reveal, Card tilt
+   =============================================== */
+
+/* ===== CUSTOM CURSOR ===== */
+.custom-cursor-active {
+    cursor: none !important;
+}
+
+.custom-cursor-active a,
+.custom-cursor-active button,
+.custom-cursor-active input,
+.custom-cursor-active textarea,
+.custom-cursor-active .project-card,
+.custom-cursor-active .filter-pill,
+.custom-cursor-active .footer-button,
+.custom-cursor-active .nav-link,
+.custom-cursor-active .release-notes-link {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.cursor-ring {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s ease,
+                background 0.2s ease;
+}
+
+/* Hover state - expand ring */
+.custom-cursor.hovering .cursor-ring {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-cursor.hovering .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Clicking state - shrink */
+.custom-cursor.clicking .cursor-ring {
+    width: 30px;
+    height: 30px;
+}
+
+.custom-cursor.clicking .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Project card hover - "View" indicator style */
+.custom-cursor.cursor-view .cursor-ring {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.custom-cursor.cursor-view .cursor-dot {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Link/button pointer state */
+.custom-cursor.cursor-pointer .cursor-ring {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* ===== TEXT REVEAL ANIMATIONS ===== */
+.text-reveal {
+    overflow: hidden;
+}
+
+.text-reveal-item {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: textRevealUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes textRevealUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Alternative: Fade in from below with slight blur */
+.text-reveal-blur .text-reveal-item {
+    filter: blur(4px);
+    animation: textRevealBlur 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes textRevealBlur {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Character-by-character variation for titles */
+.work-hero-title .text-reveal-item,
+.finding-title .text-reveal-item {
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* ===== 3D CARD TILT ENHANCEMENT ===== */
+.project-card {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Override default hover transform when tilt is active */
+.project-card:hover {
+    /* Let the JS handle the transform */
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
+}
+
+/* Glare effect styling (created by JS) */
+.tilt-glare {
+    pointer-events: none;
+    will-change: opacity, background;
+}
+
+/* Content lift effect - elements appear to float above card */
+.project-card .project-content,
+.project-card .project-cover,
+.project-card .project-cover-grid {
+    transform: translateZ(30px);
+    transform-style: preserve-3d;
+}
+
+
+/* ===== MAGNETIC BUTTON ENHANCEMENTS ===== */
+/* Magnetic buttons already have inline styles via JS */
+/* These add visual feedback */
+
+.footer-button,
+.filter-pill,
+.hero-link-btn,
+.release-notes-link {
+    will-change: transform;
+}
+
+/* Subtle scale on magnetic interaction */
+.footer-button:hover,
+.filter-pill:hover,
+.hero-link-btn:hover {
+    /* Slight scale boost when hovering */
+    transform: scale(1.02);
+}
+
+
+/* ===== DISABLE EFFECTS ON MOBILE/TOUCH ===== */
+@media (max-width: 768px), (hover: none) {
+    .custom-cursor-active {
+        cursor: auto !important;
+    }
+
+    .custom-cursor-active *,
+    .custom-cursor-active a,
+    .custom-cursor-active button {
+        cursor: auto !important;
+    }
+
+    .custom-cursor {
+        display: none !important;
+    }
+
+    /* Disable tilt on touch devices */
+    .project-card {
+        transform-style: flat;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .tilt-glare {
+        display: none;
+    }
+
+    /* Simpler text reveal on mobile */
+    .text-reveal-item {
+        animation-duration: 0.4s;
+    }
+}
+
+
+/* ===== REDUCED MOTION PREFERENCE ===== */
+@media (prefers-reduced-motion: reduce) {
+    .custom-cursor {
+        display: none;
+    }
+
+    .text-reveal-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .project-card {
+        transform-style: flat;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .tilt-glare {
+        display: none;
+    }
+}
