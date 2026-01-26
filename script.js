@@ -100,7 +100,7 @@ function renderProjects(projects) {
                     ${project.coverVideos.map(video => `
                         <div class="project-cover-item">
                             <video autoplay loop muted playsinline>
-                                <source src="${encodeURI(video)}" type="video/mp4">
+                                <source src="${video}" type="video/mp4">
                             </video>
                         </div>
                     `).join('')}
@@ -108,7 +108,7 @@ function renderProjects(projects) {
             ` : project.coverVideo ? `
                 <div class="project-cover">
                     <video autoplay loop muted playsinline>
-                        <source src="${encodeURI(project.coverVideo)}" type="video/mp4">
+                        <source src="${project.coverVideo}" type="video/mp4">
                     </video>
                 </div>
             ` : project.coverImage ? `
