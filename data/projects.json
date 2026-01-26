@@ -242,8 +242,8 @@
         ]
       },
       "heroImage": "assets/data lib hero.png",
-      "heroVideo": "assets/data lib vid.mp4",
-      "coverVideo": "assets/data lib vid.mp4",
+      "heroVideo": "assets/data lib cover.mp4",
+      "coverVideo": "assets/data lib cover.mp4",
       "coverImage": "",
       "externalUrl": "",
       "releaseNotes": "https://help.salesforce.com/s/articleView?id=ai.data_library_parent.htm&type=5"
@@ -266,7 +266,7 @@
         "Feature A",
         "Feature B"
       ],
-      "heroVideo": "assets/agent creator.mp4",
+      "heroVideo": "assets/agent builder cover.mp4",
       "details": {
         "tagline": "Build your AI agent and deploy in minutes",
         "overview": "My role focused on shaping the end-to-end agent creation experience for the MVP, from defining the scope and user journeys to designing interaction patterns that could scale as new agent types were introduced to the Agentforce platform. ",
@@ -365,8 +365,8 @@
         "learnings": ""
       },
       "heroImage": "",
-      "coverVideo": "",
-      "coverImage": "assets/agent creator cover.png",
+      "coverVideo": "assets/agent builder cover.mp4",
+      "coverImage": "",
       "externalUrl": "",
       "releaseNotes": "https://www.salesforce.com/agentforce/agent-builder/"
     },
@@ -449,7 +449,7 @@
       "heroVideo": "",
       "coverVideo": "",
       "coverImage": "assets/wish fashion cover.png",
-      "externalUrl": "https://www.figma.com/slides/ewjjt9jW7oO1io75vn0se9/Wish-portfolio-project?node-id=1-111046&t=UziploLkSCm7rS07-1",
+      "externalUrl": "https://www.figma.com/proto/GmrGHNgT8KC2tOnpiX9Vff/ADL?page-id=501%3A12954&node-id=502-13840&viewport=111%2C80%2C0.04&t=JRxg2bSPJ5suhtbU-1&scaling=contain&content-scaling=fixed&starting-point-node-id=502%3A13840",
       "releaseNotes": ""
     },
     {
